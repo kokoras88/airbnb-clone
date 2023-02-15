@@ -10,9 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_14_185027) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_15_191926) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_bookings_on_game_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_categories", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_game_categories_on_category_id"
+    t.index ["game_id"], name: "index_game_categories_on_game_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.float "price"
+    t.string "title"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_games_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +60,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_185027) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "games"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "game_categories", "categories"
+  add_foreign_key "game_categories", "games"
+  add_foreign_key "games", "users"
 end
