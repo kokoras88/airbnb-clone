@@ -11,13 +11,12 @@
 <body>
   <div class="topnav">
   <a class="active" href="#home">Home</a>
-  <<%= link_to 'Games', games_path  %>>
-  <%# <a href="#games">Games</a> %>
+  <%= link_to 'Games', games_path  %>
   <a href="#contact">Contact</a>
   <a href="#about">About</a>
+  <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
   <input type ="text" name ="searchbox" class="search" placeholder ="Search for Games">
   </div>
-  <%= link_to "Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete },
-  class: "dropdown-item" %>
+
 </body>
 </html>
