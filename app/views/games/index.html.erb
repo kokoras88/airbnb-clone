@@ -1,0 +1,6 @@
+<% @games.each do |game| %>
+  <p><%= game.title %></p>
+  Price: <%= game.price %>
+<% end %>
+
+<p><%= link_to 'Add a new game listing', new_game_path %></p>
