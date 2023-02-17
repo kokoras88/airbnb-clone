@@ -9,14 +9,13 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <%= link_to 'Games', games_path  %>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
-  <input type ="text" name ="searchbox" class="search" placeholder ="Search for Games">
-  </div>
+<div>
+  <h1 class="main-title">Wellcome to GamesBnB</h1>
+</div>
+ <%= render "shared/navbar" %>
+ <%= render "shared/all_cards" %>
+
+
 
 </body>
 </html>
