@@ -1,6 +1,22 @@
 .topnav {
-  background-color: #333;
+  background-color: #1b2141;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 1000;
+}
+
+.topnav a:hover{
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.topnav a:hover{
+  background: #1aeeef;
+  color: #050e2d;
+  box-shadow: 0 0 10px #1aeeef;
 }
 
 /* Style the links inside the navigation bar */
@@ -11,6 +27,16 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+}
+
+.topnav input{
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ddd;
+  border-radius: 5px;
 }
 
 /* Change the color of links on hover */
