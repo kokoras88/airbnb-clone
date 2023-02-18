@@ -4,6 +4,10 @@
 <h2><%= @game.title %></h2>
 <p><%= @game.description %></p>
 <p><%= @game.price %></p>
+<p><% @game.categories.each do |category| %>
+  <%= category.name %>
+<% end %>
+</p>
 
 <p><%= link_to 'Edit game listing', edit_game_path(@game) if policy(@game).edit?%></p>
 <p><%= link_to 'Delete game listing', game_path(@game),
