@@ -1,27 +1,29 @@
-<div class="card-grid">
-  <% @games.each do |game| %>
-    <div class="card">
-      <div style="margin-bottom: 20px">
-        <div class="card_content">
-          <div class="content">
-            <div class="front"></div>
-            <div class="back">
-              <h3 class="title"><%= game.title %></h3>
-              <p class="subtitle">Price: <%= game.price %></p>
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <% @games.each do |game| %>
+      <div class="card">
+        <div style="margin-bottom: 20px">
+          <div class="card_content">
+            <div class="content">
+              <div class="front"></div>
+              <div class="back">
+                <h3 class="title"><%= game.title %></h3>
+                <p class="subtitle">Price: <%= game.price %></p>
+              </div>
             </div>
           </div>
         </div>
+        <div style="display:flex">
+          <button style="margin-right: 1px" class="info_button">
+            <%= link_to "Info", game_path(game) %>
+          </button>
+          <button class="buy_button">
+          Rent
+          </button>
+        </div>
       </div>
-      <div style="display:flex">
-        <button style="margin-right: 1px" class="info_button">
-          <%= link_to "Info", game_path(game) %>
-        </button>
-        <button class="buy_button">
-        Rent
-        </button>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 
