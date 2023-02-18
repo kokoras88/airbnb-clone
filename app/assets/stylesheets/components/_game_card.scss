@@ -39,13 +39,20 @@
 
 .title {
   transform: translateZ(5rem);
-  font-size: 2rem;
+  font-size: 1rem;
   color: antiquewhite;
 }
 
 .subtitle {
   transform: translateZ(2rem);
   color: antiquewhite;
+}
+
+.front {
+  // background-image: url("<%= game.image_url %>";
+  background-image: url('https://static.posters.cz/image/1300/poster/league-of-legends-champions-i102252.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .back {
@@ -56,4 +63,27 @@
 .description {
   transform: translateZ(3rem);
   color: antiquewhite;
+}
+
+.img_card {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  transition: all 2.25s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
