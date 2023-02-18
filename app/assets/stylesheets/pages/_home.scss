@@ -1,1 +1,90 @@
 // Specific CSS for your home-page
+body{
+  background: #050e2d;
+}
+.banner{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner img{
+  width: 70%;
+  height: 100%;
+  border-radius: 20px;
+}
+.banner .bg{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner .bg .content{
+  width: 80%;
+  height: 60%;
+  background-color: #050e2d;
+}
+
+.banner .bg .content h2{
+  font-size: 2em;
+  color: antiquewhite;
+  letter-spacing: 1px;
+}
+
+.banner .bg .content p{
+  font-size: 1em;
+  color: antiquewhite;
+  letter-spacing: 1px;
+}
+
+.banner .bg .content a{
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border: 1px solid #1aeeef;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.banner .bg .content a:hover{
+  background: #1aeeef;
+  border: none;
+  color: #050e2d;
+}
+
+
+
+
+.about{
+  position: relative;
+  width: 100%;
+  min-height: 75vh;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about.contentBx{
+  width: 50%;
+  margin: 20px;
+}
+
+.about .contentBx h2{
+  font-size: 3em;
+  font-weight: 700;
+  color: #fff;
+}
+
+.about .contentBx p{
+  max-width:  600px;
+  text-align: justify;
+  color: #dbd9d9;
+}
