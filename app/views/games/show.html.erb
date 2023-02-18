@@ -2,6 +2,8 @@
 
 <h1>Show</h1>
 <h2><%= @game.title %></h2>
+<%= cl_image_tag @game.photo.key,
+      width: 400, height: 300, crop: :fill %>
 <p><%= @game.description %></p>
 <p><%= @game.price %></p>
 <p><% @game.categories.each do |category| %>
