@@ -1,6 +1,8 @@
+<%= render 'shared/navbar' %>
+
 <% @games.each do |game| %>
-  <p><%= game.title %></p>
-  Price: <%= game.price %>
+  <p><%= link_to game.title, game_path(game) %>
+  Price: <%= game.price %></p>
 <% end %>
 
 <p><%= link_to 'Add a new game listing', new_game_path %></p>
