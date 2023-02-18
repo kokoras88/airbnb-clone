@@ -17,7 +17,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     @game.user = current_user
     if @game.save
-      redirect_to games_path # later to be changed in game_path(@game) when we have a show
+      redirect_to game_path(@game) # later to be changed in game_path(@game) when we have a show
     else
       render :new, status: :unprocessable_entity
     end
