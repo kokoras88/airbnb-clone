@@ -15,3 +15,7 @@
 <p><%= link_to 'Delete game listing', game_path(@game),
 data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }if policy(@game).edit?%></p>
 <p><%= link_to 'Back to games', games_path %></p>
+
+<h1>BOOKINGS</h1>
+
+<%= render partial: 'bookings/show', locals: { booking: @booking } %>

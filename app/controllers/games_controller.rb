@@ -26,6 +26,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @booking = Booking.new(game: @game)
     authorize @game
   end
 
