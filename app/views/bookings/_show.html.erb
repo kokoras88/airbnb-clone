@@ -1,0 +1,13 @@
+<%= simple_form_for @booking, data: { controller: 'flatpickr' } do |f| %>
+  <%= f.hidden_field :game_id, value: @game.id %>
+  <%= f.input :start_time, as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
+  <%= f.input :end_time, as: :string, input_html: { data: { flatpickr_target: "endTime" } } %>
+  <%= f.submit 'RENT THE GAME', class: 'btn btn-primary' %>
+<% end %>
+
+<h1>Booking Details</h1>
+<p><strong>Start date:</strong> <%= @booking.start_date %></p>
+<p><strong>End date:</strong> <%= @booking.end_date %></p>
+
+<h1>Here Come the calendar</h1>
+<%= render partial: 'bookings/calendar', locals: { bookings: @bookings } %>
