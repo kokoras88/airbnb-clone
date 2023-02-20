@@ -1,1 +1,4 @@
 <h1>Wellcome to the Bookings!</h1>
+<% @bookings.each do |booking| %>
+<p><%= booking.game.title %></p>
+<% end %>

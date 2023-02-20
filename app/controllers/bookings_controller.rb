@@ -3,13 +3,12 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show]
 
   def index
-    authorize Booking
     @bookings = policy_scope(Booking)
     puts "Number of bookings: #{@bookings.count}"
   end
 
   def show
-    authorize @booking
+    # authorize @booking
   end
 
   def create
@@ -19,17 +18,16 @@ class BookingsController < ApplicationController
 
     if @booking.save
       flash[:notice] = "Booking was successfully created."
-      redirect_to @booking
     else
       flash[:alert] = "There was an error creating the booking."
-      redirect_to @game
-    end
 
-    Rails.logger.debug "Params: #{params.inspect}"
-    Rails.logger.debug "Game: #{@game.inspect}"
-    Rails.logger.debug "Booking: #{@booking.inspect}"
-    Rails.logger.debug "Booking params: #{booking_params.inspect}"
-    Rails.logger.debug "Current user: #{current_user.inspect}"
+
+      Rails.logger.debug "Params: #{params.inspect}"
+      Rails.logger.debug "Game: #{@game.inspect}"
+      Rails.logger.debug "Booking: #{@booking.inspect}"
+      Rails.logger.debug "Booking params: #{booking_params.inspect}"
+      Rails.logger.debug "Current user: #{current_user.inspect}"
+    end
   end
 
   private
@@ -47,9 +45,8 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_date, :end_date, :game_id)
   end
 
-  def set_dates
-    self.start_date = start_date.to_date
-    self.end_date = end_date.to_date
-  end
-
+  # def set_dates
+  #   self.start_date = start_date.to_date
+  #   self.end_date = end_date.to_date
+  # end
 end
