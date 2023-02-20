@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  before_action :set_current_user
+
   def home
     authorize Game
   end
@@ -25,9 +27,11 @@ class GamesController < ApplicationController
   end
 
   def show
+    @bookings = Booking.all
     @game = Game.find(params[:id])
     @booking = Booking.new(game: @game)
     authorize @game
+
   end
 
   def edit
@@ -56,5 +60,9 @@ class GamesController < ApplicationController
 
   def game_params
     params.require(:game).permit(:price, :title, :description, :photo)
+  end
+
+  def set_current_user
+    @current_user = current_user
   end
 end

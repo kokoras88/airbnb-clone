@@ -17,16 +17,11 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-      flash[:notice] = "Booking was successfully created."
+      # flash[:notice] = "Booking was successfully created."
+      redirect_to bookings_path
     else
-      flash[:alert] = "There was an error creating the booking."
-
-
-      Rails.logger.debug "Params: #{params.inspect}"
-      Rails.logger.debug "Game: #{@game.inspect}"
-      Rails.logger.debug "Booking: #{@booking.inspect}"
-      Rails.logger.debug "Booking params: #{booking_params.inspect}"
-      Rails.logger.debug "Current user: #{current_user.inspect}"
+      # flash[:alert] = "There was an error creating the booking."
+      redirect_to game_path(@game)
     end
   end
 

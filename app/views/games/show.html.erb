@@ -19,3 +19,5 @@ data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }if policy(@game).
 <h1>BOOKINGS</h1>
 
 <%= render partial: 'bookings/show', locals: { booking: @booking } %>
+<h1>Here Come the calendar</h1>
+<%= render partial: 'bookings/calendar', locals: { bookings: @bookings, current_user: @current_user} %>
