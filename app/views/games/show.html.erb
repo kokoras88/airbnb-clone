@@ -23,8 +23,11 @@
 <div class="reviews-game subtitle">
   <h1>REVIEWS</h1>
   <h1>All the Reviews</h1>
-  <%= @reviews.last.content%>
-  <%= render partial: 'reviews/show', locals: { review: @review } %>
+    <% @reviews.last(5).each do |review| %>
+      <p><%= review.content %> (rating: <%= review.rating %>)</p>
+    <% end %>
+  <%= link_to "Write a Review", new_game_review_path(@game) %>
+  <%= render 'reviews/show', locals: { review: @review } %>
 </div>
 
 

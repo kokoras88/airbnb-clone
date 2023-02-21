@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       flash[:notice] = "Review was successfully created."
-      redirect_to game_path(@game)
+      redirect_to game_reviews_path(@game)
     else
       flash[:alert] = "There was an error creating the review."
       redirect_to game_reviews_path(@game)
