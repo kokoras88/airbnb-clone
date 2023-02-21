@@ -1,6 +1,13 @@
 <%= render 'shared/navbar' %>
+<link rel="stylesheet" href="app/assets/stylesheets/pages/_index.scss">
 
-<p><%= link_to 'Add a new game listing', new_game_path %></p>
+<button>
+<span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+<p> <%=  link_to 'Add a New Game Listing', new_game_path %></p>
+</button>
 
 <div style="display:flex">
  <%= render "shared/all_cards" %>

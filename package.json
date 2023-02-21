@@ -8,6 +8,7 @@
     "@hotwired/turbo-rails": "^7.2.5",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "express": "^4.18.2",
     "flatpickr": "^4.6.13",
     "fullcalendar": "^6.1.4",
     "webpack": "^5.75.0",
