@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :games, only: %i[index new create show edit update destroy] do
     resources :bookings, only: %i[create]
+    resources :reviews, only: %i[new create update destroy]
   end
   resources :bookings, only: %i[index]
   resources :categories, only: %i[index show]
+
+  get '/games/:id/reviews/star-rating.js', to: 'reviews#star_rating'
+
+
 end

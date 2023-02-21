@@ -1,7 +1,7 @@
 <div id='calendar'></div>
 <% if bookings.present? %>
   <% bookings.each do |booking| %>
-    <%= booking.inspect %><br> # Add this line
+    <% booking.inspect%><br>
   <% end %>
 <% else %>
   No bookings to display.
@@ -13,14 +13,23 @@
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       events: [
-        <% if @bookings %>
-          <% @bookings.each do |booking| %>
-            {
+        <% if bookings %>
+          <% bookings.each do |booking| %>
+            <% if booking.user == current_user%>
+              {
               title: '<%= booking.game.title %>',
               start: '<%= booking.start_date %>',
               end: '<%= booking.end_date %>',
-              color: 'red'
-            },
+              color: 'green'
+              },
+            <%else%>
+              {
+                title: '<%= booking.game.title %>',
+                start: '<%= booking.start_date %>',
+                end: '<%= booking.end_date %>',
+                color: 'red'
+              },
+            <%end%>
           <% end %>
         <% end %>
       ]
