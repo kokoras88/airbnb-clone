@@ -15,20 +15,22 @@
       events: [
         <% if bookings %>
           <% bookings.each do |booking| %>
-            <% if booking.user == current_user%>
-              {
-              title: '<%= booking.game.title %>',
-              start: '<%= booking.start_date %>',
-              end: '<%= booking.end_date %>',
-              color: 'green'
-              },
-            <%else%>
-              {
+            <%if game == booking.game%>
+              <% if booking.user == current_user%>
+                {
                 title: '<%= booking.game.title %>',
                 start: '<%= booking.start_date %>',
                 end: '<%= booking.end_date %>',
-                color: 'red'
-              },
+                color: 'green'
+                },
+              <%else%>
+                {
+                  title: '<%= booking.game.title %>',
+                  start: '<%= booking.start_date %>',
+                  end: '<%= booking.end_date %>',
+                  color: 'red'
+                },
+              <%end%>
             <%end%>
           <% end %>
         <% end %>
