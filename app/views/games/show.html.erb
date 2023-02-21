@@ -1,23 +1,37 @@
 <%= render 'shared/navbar' %>
 
-<h1>Show</h1>
-<h2><%= @game.title %></h2>
-<%= cl_image_tag @game.photo.key,
-      width: 400, height: 300, crop: :fill %>
-<p><%= @game.description %></p>
-<p><%= @game.price %></p>
-<p><% @game.categories.each do |category| %>
-  <%= category.name %>
-<% end %>
-</p>
+<div class="information-game">
+  <h1>Show</h1>
+  <h2><%= @game.title %></h2>
+  <%= cl_image_tag @game.photo.key,
+        width: 400, height: 300, crop: :fill %>
+  <p><%= @game.description %></p>
+  <p><%= @game.price %></p>
+  <p><% @game.categories.each do |category| %>
+    <%= category.name %>
+  <% end %>
+  </p>
+</div>
 
-<p><%= link_to 'Edit game listing', edit_game_path(@game) if policy(@game).edit?%></p>
-<p><%= link_to 'Delete game listing', game_path(@game),
-data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }if policy(@game).edit?%></p>
-<p><%= link_to 'Back to games', games_path %></p>
+<div class="links-game subtitle">
+  <p><%= link_to 'Edit game listing', edit_game_path(@game) if policy(@game).edit?%></p>
+  <p><%= link_to 'Delete game listing', game_path(@game),
+  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }if policy(@game).edit?%></p>
+  <p><%= link_to 'Back to games', games_path %></p>
+</div>
 
-<h1>BOOKINGS</h1>
+<div class="reviews-game subtitle">
+  <h1>REVIEWS</h1>
+  <h1>All the Reviews</h1>
+  <%= @reviews.last.content%>
+  <%= render partial: 'reviews/show', locals: { review: @review } %>
+</div>
 
-<%= render partial: 'bookings/show', locals: { booking: @booking } %>
-<h1>Here Come the calendar</h1>
-<%= render partial: 'bookings/calendar', locals: { bookings: @bookings, current_user: @current_user} %>
+
+<div class="bookings-game subtitle">
+  <h1>BOOKINGS</h1>
+
+  <%= render partial: 'bookings/show', locals: { booking: @booking } %>
+  <h1>Here Come the calendar</h1>
+  <%= render partial: 'bookings/calendar', locals: { bookings: @bookings, current_user: @current_user} %>
+</div>
