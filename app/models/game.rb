@@ -4,6 +4,7 @@ class Game < ApplicationRecord
   has_many :categories, through: :game_categories
   belongs_to :user
   has_many :bookings
+  has_many :reviews, dependent: :destroy
 
   def unavailable_dates
     bookings.pluck(:start_date, :end_date).map do |range|
