@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[create]
   end
   resources :bookings, only: %i[index]
+  resources :categories, only: %i[index show]
 end
