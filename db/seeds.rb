@@ -8,6 +8,7 @@
 
 puts 'Cleaning'
 GameCategory.delete_all
+Booking.delete_all
 Game.all.delete_all
 Category.delete_all
 Game.all.each do |game|

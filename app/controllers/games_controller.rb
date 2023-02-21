@@ -30,6 +30,7 @@ class GamesController < ApplicationController
     @bookings = Booking.all
     @game = Game.find(params[:id])
     @booking = Booking.new(game: @game)
+    @reviews = @game.reviews
     authorize @game
 
   end
