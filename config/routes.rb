@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[new create update destroy]
   end
   resources :bookings, only: %i[index]
-  # config/routes.rb
+  resources :categories, only: %i[index show]
+
   get '/games/:id/reviews/star-rating.js', to: 'reviews#star_rating'
+
 
 end
