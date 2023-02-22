@@ -34,7 +34,7 @@
       <div class="bookings-game subtitle">
         <h1>BOOKINGS</h1>
 
-        <%= render partial: 'bookings/show', locals: { bookings: @bookings, booking: @booking } %>
+        <%= render partial: 'bookings/show', locals: { bookings: @bookings, booking: @booking, current_user: @current_user } %>
         <h1>Here Come the calendar</h1>
         <%= render partial: 'bookings/calendar', locals: { bookings: @bookings, game: @game, current_user: @current_user} %>
       </div>
