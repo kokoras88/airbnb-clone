@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[index]
   resources :categories, only: %i[index show]
   resources :reviews, only: %i[index]
-
-  # get '/games/:id/reviews/star-rating.js', to: 'reviews#star_rating'
+  get 'about', to: 'pages#about'
+  get 'contact', to: 'pages#contact'
 end
