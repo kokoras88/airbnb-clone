@@ -25,14 +25,8 @@
     </div>
 
     <div class="reviews-game subtitle">
-      <h1>REVIEWS</h1>
-      <h1>All the Reviews</h1>
-        <% @reviews.last(5).each do |review| %>
-          <h3>From <%= review.user.first_name %>:</h3>
-          <p><%= review.content %> (rating: <%= review.rating %>)</p>
-        <% end %>
-      <%= link_to "Write a Review", new_game_review_path(@game) %>
-      <%= render 'reviews/show', locals: { review: @review } %>
+      <%= render 'shared/all_reviews' %>
+        <%= link_to "Write a Review", new_game_review_path(@game) if @booked%>
     </div>
   </div>
   <% if user_signed_in? %>

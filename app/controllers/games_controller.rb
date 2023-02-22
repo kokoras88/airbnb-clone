@@ -1,6 +1,9 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!, except: %i[home index show]
   before_action :set_current_user
+  before_action :set_game, only: %i[show update edit]
+  before_action :check_if_booked, only: %i[show]
+
 
   def home
     authorize Game
@@ -36,19 +39,16 @@ class GamesController < ApplicationController
 
   def show
     @bookings = Booking.all
-    @game = Game.find(params[:id])
     @booking = Booking.new(game: @game)
     @reviews = @game.reviews
     authorize @game
   end
 
   def edit
-    @game = Game.find(params[:id])
     authorize @game
   end
 
   def update
-    @game = Game.find(params[:id])
     if @game.update(game_params)
       redirect_to game_path(@game)
     else
@@ -66,11 +66,23 @@ class GamesController < ApplicationController
 
   private
 
+  def set_game
+    @game = Game.find(params[:id])
+  end
+
   def game_params
     params.require(:game).permit(:price, :title, :description, :photo)
   end
 
   def set_current_user
     @current_user = current_user
+  end
+
+  def check_if_booked
+    booked = false
+    @current_user.bookings.each do |booking|
+      booked = true if booking.game == @game
+    end
+    @booked = booked
   end
 end

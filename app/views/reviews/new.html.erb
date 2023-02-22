@@ -1,37 +1,31 @@
-<h1>Reviews listing</h1>
-<div class="form-review">
-  <h2>Please add your experience!</h2>
-  <%= simple_form_for [@game, @review], url: game_reviews_path(@game) do |f| %>
-    <%= f.input :content %>
-    <%= f.input :rating %>
-    <%= f.submit %>
-  <% end %>
-</div>
-
-<div class="back-to-game">
-  <p><%= link_to 'Back to games', games_path %></p>
-</div>
-
-<div class="reviews-list">
-  <% @reviews.each do |review| %>
-    <div class="review">
-      <%= review.rating %>
-      <%= review.content %>
+<div style = "display: flex; align-items: center; justify-content: center; height: 100vh;">
+  <div>
+    <h1>New Review</h1>
+    <div class="form-review">
+      <h2>Please add your experience!</h2>
+      <%= simple_form_for [@game, @review], url: game_reviews_path(@game) do |f| %>
+        <%= f.input :content %>
+        <%= f.input :rating %>
+        <%= f.submit %>
+      <% end %>
     </div>
-  <% end %>
+
+    <div class="back-to-game">
+      <p><%= link_to 'Back to games', games_path %></p>
+    </div>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <script src="star-rating.js"></script>
+  </div>
 </div>
-
-
-<% if flash[:notice] %>
-  <div class="alert alert-success">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
-
-<% if flash[:alert] %>
-  <div class="alert alert-danger">
-    <%= flash[:alert] %>
-  </div>
-<% end %>
-
-<script src="star-rating.js"></script>
