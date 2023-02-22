@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts 'Cleaning'
+Review.delete_all
 GameCategory.delete_all
 Booking.delete_all
 Game.all.delete_all
@@ -37,6 +38,7 @@ end
 
 puts "Generated #{Category.count} categories!"
 
+puts 'Generating games...'
 game = Game.create(
   title: "The Legend of Zelda: Breath of the Wild",
   description: 'Embark on an epic adventure in a vast open world. Explore the ruins of a once-great civilization,
@@ -179,6 +181,5 @@ category = Category.find_by(name: 'Multiplayer')
 GameCategory.create(game: game, category: category)
 category = Category.find_by(name: 'Party')
 GameCategory.create(game: game, category: category)
-puts "Generated #{Game.count} games!"
 
-puts "Attaching photos to games..."
+puts "Generated #{Game.count} games!"
