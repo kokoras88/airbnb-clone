@@ -1,6 +1,6 @@
-.topnav {
+.navbar {
   background-color: #1b2141;
-  overflow: hidden;
+  // overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,19 +8,19 @@
   z-index: 1000;
 }
 
-.topnav a:hover{
+.navbar a:hover{
   padding: 10px 20px;
   border-radius: 5px;
 }
 
-.topnav a:hover{
+.navbar a:hover{
   background: #1aeeef;
   color: #050e2d;
   box-shadow: 0 0 10px #1aeeef;
 }
 
 /* Style the links inside the navigation bar */
-.topnav a {
+.navbar a {
   float: left;
   color: #f2f2f2;
   text-align: center;
@@ -29,7 +29,7 @@
   font-size: 17px;
 }
 
-.topnav input{
+.navbar input{
   padding: 5px;
   margin: 5px;
   display: flex;
@@ -40,13 +40,35 @@
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
+.navbar a:hover {
   background-color: #ddd;
   color: black;
 }
+
+.navbar .dropdown-menu {
+  background: #0b1846cd;
+}
+.navbar .dropdown-menu a {
+  border: none;
+  color: antiquewhite;
+}
+
+.navbar .dropdown-menu a:hover {
+  background: #ffffff;
+  color: black;
+}
+
 
 /* Make a functional navbar*/
 .search {
   float: right;
   padding: 14px 16px;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
 }

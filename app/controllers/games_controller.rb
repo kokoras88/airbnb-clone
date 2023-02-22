@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :authenticate_user!, except: %i[home index show]
   before_action :set_current_user
 
   def home
@@ -32,7 +33,6 @@ class GamesController < ApplicationController
     @booking = Booking.new(game: @game)
     @reviews = @game.reviews
     authorize @game
-
   end
 
   def edit

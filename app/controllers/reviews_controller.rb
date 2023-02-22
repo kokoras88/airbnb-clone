@@ -1,6 +1,11 @@
 class ReviewsController < ApplicationController
-  before_action :set_game
+  before_action :authenticate_user!
+  before_action :set_game, only: %i[new create]
   before_action :set_review, only: %i[show edit update destroy]
+
+  def index
+    @reviews = policy_scope(Review)
+  end
 
   def new
     @game = Game.find(params[:game_id])
@@ -37,20 +42,20 @@ class ReviewsController < ApplicationController
   #   end
   # end
 
-  def update
-    @review = Review.find(params[:id])
-    if @review.update(review_params)
-      redirect_to @game, notice: "Review was successfully updated."
-    else
-      render 'games/show'
-    end
-  end
+  # def update
+  #   @review = Review.find(params[:id])
+  #   if @review.update(review_params)
+  #     redirect_to @game, notice: "Review was successfully updated."
+  #   else
+  #     render 'games/show'
+  #   end
+  # end
 
-  def destroy
-    @review = Review.find(params[:id])
-    @review.destroy
-    redirect_to @game, notice: "Review was successfully deleted."
-  end
+  # def destroy
+  #   @review = Review.find(params[:id])
+  #   @review.destroy
+  #   redirect_to @game, notice: "Review was successfully deleted."
+  # end
 
   def show
     @review = Review.find(params[:id])
