@@ -18,8 +18,15 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new(game_params)
+
     @game.user = current_user
     if @game.save
+      params[:game][:categories].each_with_index do |category, i|
+        if i != 0
+          category = Category.find(category)
+          GameCategory.create(game: @game, category: category)
+        end
+      end
       redirect_to game_path(@game) # later to be changed in game_path(@game) when we have a show
     else
       render :new, status: :unprocessable_entity

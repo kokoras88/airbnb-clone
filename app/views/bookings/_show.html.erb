@@ -5,7 +5,8 @@
   <%= f.submit 'RENT THE GAME', class: 'btn btn-primary' %>
 <% end %>
 
-<h1>Booking Details</h1>
-<% booking = @bookings.where(game: @game).last %>
-<p><strong>Start date:</strong> <%= booking.start_date %></p>
-<p><strong>End date:</strong> <%= booking.end_date %></p>
+<% if booking = @bookings.where(game: @game).last %>
+  <h1>Booking Details</h1>
+  <p><strong>Start date:</strong> <%= booking.start_date %></p>
+  <p><strong>End date:</strong> <%= booking.end_date %></p>
+<% end %>
