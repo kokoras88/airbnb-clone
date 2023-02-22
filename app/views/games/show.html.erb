@@ -1,43 +1,48 @@
-<%= render 'shared/navbar' %>
-
-<div class="game-banner" style="
-  background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
-  url('<%= cl_image_path @game.photo.key, fetch_format: :auto, crop: :fill %>')"
->
-</div>
-<div style="display: flex; justify-content: space-between; background: #162a7291;">
-  <div style = "margin: 60px;">
-    <div class="information-game">
-      <h2><%= @game.title %></h2>
-      <p><%= @game.description %></p>
-      <p><%= @game.price %></p>
-      <p><% @game.categories.each do |category| %>
-        <%= link_to category.name, category_path(category) %>
-      <% end %>
-      </p>
-    </div>
-
-    <div class="links-game subtitle" style="display: flex; justify-content: space-between;">
-      <p><%= link_to 'Edit game listing', edit_game_path(@game) if policy(@game).edit?%></p>
-      <p><%= link_to 'Delete game listing', game_path(@game),
-      data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }if policy(@game).edit?%></p>
-      <p><%= link_to 'Back to games', games_path %></p>
-    </div>
-
-    <div class="reviews-game subtitle">
-      <%= render 'shared/all_reviews' %>
-        <%= link_to "Write a Review", new_game_review_path(@game) if @booked%>
-    </div>
+<div class='game-container'>
+  <div class="game-banner" style="
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+    url('<%= cl_image_path @game.photo.key, fetch_format: :auto, crop: :fill %>')"
+  >
+  <div class='game-title'>
+    <h1><%= @game.title %></h1>
   </div>
-  <% if user_signed_in? %>
-    <div style = "margin: 60px;">
-      <div class="bookings-game subtitle">
-        <h1>BOOKINGS</h1>
+  </div>
+  <div class='game-wrapper' style ="background: linear-gradient(to left, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url('https://img.freepik.com/free-photo/blue-designed-grunge-concrete-texture-vintage-background-with-space-text-image_1258-108930.jpg?w=2000&t=st=1677102187~exp=1677102787~hmac=713b6c102aebd17c5b3f187011fc5f0b285e38e5a5ac428ed9932197b6b56c50');">
+    <div class= 'game-container' style = "margin: 60px;">
+      <div class="game-information">
+        <p><%= @game.description %></p>
+        <p><%= @game.price %></p>
+        <p><% @game.categories.each do |category| %>
+          <%= link_to category.name, category_path(category), class: 'btn btn-light' %>
+        <% end %>
+        </p>
+      </div>
 
-        <%= render partial: 'bookings/show', locals: { bookings: @bookings, booking: @booking, current_user: @current_user } %>
-        <h1>Here Come the calendar</h1>
-        <%= render partial: 'bookings/calendar', locals: { bookings: @bookings, game: @game, current_user: @current_user} %>
+      <div class="game-links" style="display: flex; justify-content: flex-end; gap: 10px; padding: 10px;">
+        <p><%= link_to 'Edit game listing', edit_game_path(@game), class: 'btn btn-primary' if policy(@game).edit?%></p>
+        <p><%= link_to 'Delete game listing', game_path(@game), class: 'btn btn-danger',
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }if policy(@game).edit?%></p>
+        <p><%= link_to 'Back to games', games_path, class: 'btn btn-info' %></p>
+      </div>
+
+      <div class="game-reviews">
+        <%= render 'shared/all_reviews' %>
+          <%= link_to "Write a Review", new_game_review_path(@game) if @booked%>
       </div>
     </div>
-  <% end %>
+    <% if user_signed_in? %>
+      <div class="booking-wraper">
+        <div class="game-booking">
+          <div>
+            <h1>BOOKINGS</h1>
+            <%= render partial: 'bookings/show', locals: { bookings: @bookings, booking: @booking, current_user: @current_user } %>
+          </div>
+          <div>
+            <h1>Here Come the calendar</h1>
+            <%= render partial: 'bookings/calendar', locals: { bookings: @bookings, game: @game, current_user: @current_user} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
