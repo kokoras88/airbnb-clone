@@ -35,6 +35,5 @@
 
   <%= render partial: 'bookings/show', locals: { booking: @booking } %>
   <h1>Here Come the calendar</h1>
-  <%= render partial: 'bookings/calendar', locals: { bookings: @bookings, current_user: @current_user} %>
+  <%= render partial: 'bookings/calendar', locals: { bookings: @bookings, game: @game, current_user: @current_user} %>
 </div>
-
