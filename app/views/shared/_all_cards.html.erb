@@ -1,27 +1,28 @@
 <div class="container">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <% @games.each do |game| %>
-      <div class="card">
-        <div style="margin-bottom: 20px">
+      <div class="card" style="background: #050e2d;">
+        <div style="margin-bottom: 10px">
           <div class="card_content">
             <div class="content">
-              <div class="front">
-                <%= cl_image_tag game.photo.key,
-                width: 400, height: 300, crop: :fill %>
+              <div class="front" style= "background-image: url('<%= cl_image_path game.photo.key,
+                width: 400, height: 300, crop: :fill %>');">
+                <div>
+                  <p class="subtitle"><%= game.title %></p>
+                </div>
               </div>
               <div class="back">
-                <h3 class="title"><%= game.title %></h3>
-                <p class="subtitle">Price: <%= game.price %></p>
+                <div>
+                  <p class="subtitle"><%= game.description.first(24) %>...</p>
+                  <p class="subtitle">Price: <%= game.price %></p>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div style="display:flex">
           <button style="margin-right: 1px" class="info_button">
-            <%= link_to "Info", game_path(game) %>
-          </button>
-          <button class="buy_button">
-          Rent
+            <%= link_to 'Info', game_path(game) %>
           </button>
         </div>
       </div>

@@ -26,6 +26,9 @@
 
 .front,
 .back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -50,11 +53,9 @@
 
 .front {
   padding: 0;
-  // background-image: url("<%= game.image_url %>";
-  // background-image: url('https://static.posters.cz/image/1300/poster/league-of-legends-champions-i102252.jpg');
-  // background-image: url("https://res.cloudinary.com/dnorlz2hl/image/upload/#{@game.title}.jpg");
-  // background-size: cover;
-  // background-position: center;
+  background-position: center;
+  background-size: cover;
+  color: antiquewhite;
 }
 
 .front img {
