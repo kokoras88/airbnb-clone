@@ -46,9 +46,15 @@ class BookingsController < ApplicationController
 
   def booking_check
     valid = true
+
+
       Booking.all.each do |booking|
+        x1 = @booking.start_date
+        x2 = @booking.end_date
+        y1 = booking.start_date
+        y2 = booking.end_date
         if booking.game == @game
-          if (@booking.start_date >= booking.start_date && @booking.start_date < booking.end_date) || (@booking.end_date > booking.start_date && @booking.end_date <= booking.end_date)
+          if (x1 >= y1 && x1 < y2) || (x1 < y1 && x2 > y1) || (x1 >= y1 && x2 < y2) || (x2 >= y2 && x1 < y1)
             valid = false
           end
         end
