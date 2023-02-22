@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts 'Cleaning'
+Review.delete_all
 GameCategory.delete_all
 Booking.delete_all
 Game.all.delete_all
@@ -37,6 +38,7 @@ end
 
 puts "Generated #{Category.count} categories!"
 
+puts 'Generating games...'
 game = Game.create(
   title: "The Legend of Zelda: Breath of the Wild",
   description: 'Embark on an epic adventure in a vast open world. Explore the ruins of a once-great civilization,
@@ -45,7 +47,7 @@ game = Game.create(
   user_id: 1
   # “categories”: [“Action games”, “Adventure games”],
 )
-file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/development/o7lg8u7atz6xzlv3ry9c16hljl84.jpg")
+file = URI.open("https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000000025/7137262b5a64d921e193653f8aa0b722925abc5680380ca0e18a5cfd91697f58")
 game.photo.attach(io: file, filename: game.title.to_s, content_type: 'image/jpeg')
 game.save!
 category = Category.find_by(name: 'Action')
@@ -179,6 +181,5 @@ category = Category.find_by(name: 'Multiplayer')
 GameCategory.create(game: game, category: category)
 category = Category.find_by(name: 'Party')
 GameCategory.create(game: game, category: category)
-puts "Generated #{Game.count} games!"
 
-puts "Attaching photos to games..."
+puts "Generated #{Game.count} games!"
