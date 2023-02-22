@@ -1,0 +1,74 @@
+.game-container{
+  // background: #050e2d;
+
+  .game-banner{
+    position: relative;
+  }
+
+  .game-title{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.607);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-family: 'Odibee Sans', cursive;
+    font-size: 48px;
+    letter-spacing: 0.1em;
+    color: antiquewhite;
+  }
+
+  .game-wrapper{
+    background-repeat: repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    // justify-content: space-between;
+    // background: #162a7291;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .game-container{
+      .game-information{
+        border-radius: 15px;
+        background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+        padding: 5px;
+        border: 1px solid black;
+        border-top: none;
+        border-bottom: none;
+        margin-bottom: 10px;
+        padding: 25px;
+        font-size: 20px;
+        font-family: 'Varela', sans-serif;
+        color: antiquewhite;
+      }
+
+      .game-reviews{
+        border-radius: 15px;
+        background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+        padding: 5px;
+        border: 1px solid black;
+        border-bottom: none;
+        padding: 25px;
+      }
+    }
+    .booking-wraper{
+      padding: 50px;
+      max-width: 1500;
+      .game-booking{
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-evenly;
+        background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+        padding: 25px;
+        padding-bottom: 0px;
+      }
+    }
+
+  }
+}
