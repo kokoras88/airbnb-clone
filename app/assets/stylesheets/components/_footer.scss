@@ -1,5 +1,5 @@
 .footer {
-  background: #F4F4F4;
+  background: linear-gradient(to bottom, #55555540, #00e1ff34);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,4 +23,67 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.share {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  transition: .4s ease-in-out;
+}
+
+.btn3 {
+  position: relative;
+  width: 3em;
+  height: 3em;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #55555540, #00e1ff34);
+  transition: .4s all;
+}
+
+.btn3 .tooltiptext3 {
+  visibility: hidden;
+  width: 6em;
+  height: 8em;
+  background: linear-gradient(to bottom, #55555540, #00e1ff34);
+  color: black;
+  text-align: center;
+  border-radius: 10px;
+  padding: 1em;
+  position: absolute;
+  left: -1.5em;
+  top: -8em;
+  z-index: 1;
+  transition: .1s ease-in-out;
+}
+
+.btn3 .tooltiptext3 .card {
+  width: 4em;
+  height: 4em;
+  background: linear-gradient(to bottom, #55555540, #00e1ff34);
+}
+
+.btn3 .tooltiptext3 .account {
+  margin-top: 1em;
+}
+
+.btn3 .tooltiptext3 .username {
+  font-size: 0.7em;
+  margin-top: 1.6em;
+  font-weight: bold;
+}
+
+.btn3:hover .tooltiptext3 {
+  transform: translateY(-1em);
+  visibility: visible;
+}
+
+.btn3:hover {
+  background-color: black;
+}
+
+.btn3:hover .git {
+  fill: white;
 }
