@@ -47,7 +47,7 @@ game = Game.create(
 )
 file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/development/o7lg8u7atz6xzlv3ry9c16hljl84.jpg")
 game.photo.attach(io: file, filename: game.title.to_s, content_type: 'image/jpeg')
-game.save
+game.save!
 category = Category.find_by(name: 'Action')
 GameCategory.create(game: game, category: category)
 category = Category.find_by(name: 'Adventure')
@@ -62,7 +62,7 @@ game = Game.new(
 )
 file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/v1676744010/development/t4of37rnn314m0dykc1jk7kz96oo.jpg")
 game.photo.attach(io: file, filename: game.title.to_s, content_type: 'image/jpeg')
-game.save
+game.save!
 category = Category.find_by(name: 'Multiplayer')
 GameCategory.create(game: game, category: category)
 game = Game.new(
@@ -74,7 +74,7 @@ game = Game.new(
 )
 file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/v1676744012/development/65wun3zfo5t6s5244kg3jsj5tgss.jpg")
 game.photo.attach(io: file, filename: game.title.to_s, content_type: 'image/jpeg')
-game.save
+game.save!
 category = Category.find_by(name: 'Strategy')
 GameCategory.create(game: game, category: category)
 category = Category.find_by(name: 'Simulation')
@@ -88,7 +88,7 @@ game = Game.new(
 )
 file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/v1676744015/development/fgzzcpkrjd2geihdela5akavgjeg.jpg")
 game.photo.attach(io: file, filename: game.title.to_s, content_type: 'image/jpeg')
-game.save
+game.save!
 category = Category.find_by(name: 'Sports')
 GameCategory.create(game: game, category: category)
 game = Game.new(
@@ -101,7 +101,7 @@ game = Game.new(
 )
 file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/v1676744017/development/4m7b4eeieryqa8j9dxfmjkbp2t7d.jpg")
 game.photo.attach(io: file, filename: game.title.to_s, content_type: 'image/jpeg')
-game.save
+game.save!
 category = Category.find_by(name: 'Racing')
 GameCategory.create(game: game, category: category)
 game = Game.new(
@@ -114,7 +114,7 @@ game = Game.new(
 )
 file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/v1676744019/development/fv5xkhx7ky4pgmm0x39lexo6w9es.jpg")
 game.photo.attach(io: file, filename: game.title.to_s, content_type: 'image/jpeg')
-game.save
+game.save!
 category = Category.find_by(name: 'Adventure')
 GameCategory.create(game: game, category: category)
 category = Category.find_by(name: 'Simulation')
@@ -129,7 +129,7 @@ game = Game.new(
 )
 file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/v1676744021/development/1ax5be8o1m3f1zlx479gq475iiv4.jpg")
 game.photo.attach(io: file, filename: game.title.to_s, content_type: 'image/jpeg')
-game.save
+game.save!
 category = Category.find_by(name: 'Puzzle')
 GameCategory.create(game: game, category: category)
 game = Game.new(
@@ -142,7 +142,7 @@ game = Game.new(
 )
 file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/v1676744023/development/awytt5hiayzmoz9w633u1mflhxg2.jpg")
 game.photo.attach(io: file, filename: game.title, content_type: 'image/jpeg')
-game.save
+game.save!
 category = Category.find_by(name: 'Action')
 GameCategory.create(game: game, category: category)
 category = Category.find_by(name: 'Adventure')
@@ -159,7 +159,7 @@ game = Game.new(
 )
 file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/v1676744026/development/kbic6sg3gubozkyyw5obqjtohuim.jpg")
 game.photo.attach(io: file, filename: game.title, content_type: 'image/jpeg')
-game.save
+game.save!
 category = Category.find_by(name: 'Role-Music')
 GameCategory.create(game: game, category: category)
 category = Category.find_by(name: 'Multiplayer')
@@ -174,7 +174,7 @@ game = Game.new(
 )
 file = URI.open("https://res.cloudinary.com/dnorlz2hl/image/upload/v1676744033/development/qj0n8h6jk2955koi0crqmnxwm57b.jpg")
 game.photo.attach(io: file, filename: game.title, content_type: 'image/jpeg')
-game.save
+game.save!
 category = Category.find_by(name: 'Multiplayer')
 GameCategory.create(game: game, category: category)
 category = Category.find_by(name: 'Party')
