@@ -16,10 +16,14 @@ class BookingsController < ApplicationController
     puts "Params: #{params.inspect}"
     @booking = Booking.new(booking_params.merge(game: @game, user: current_user))
     authorize @booking
-
-    if @booking.save
-      # flash[:notice] = "Booking was successfully created."
-      redirect_to bookings_path
+    if booking_check
+      if @booking.save
+        # flash[:notice] = "Booking was successfully created."
+        redirect_to bookings_path
+      else
+        # flash[:alert] = "There was an error creating the booking."
+        redirect_to game_path(@game)
+      end
     else
       # flash[:alert] = "There was an error creating the booking."
       redirect_to game_path(@game)
@@ -30,7 +34,6 @@ class BookingsController < ApplicationController
 
   def set_game
     @game = Game.find(params[:game_id])
-    puts @game.inspect
   end
 
   def set_booking
@@ -41,8 +44,15 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_date, :end_date, :game_id)
   end
 
-  # def set_dates
-  #   self.start_date = start_date.to_date
-  #   self.end_date = end_date.to_date
-  # end
+  def booking_check
+    valid = true
+      Booking.all.each do |booking|
+        if booking.game == @game
+          if (@booking.start_date >= booking.start_date && @booking.start_date < booking.end_date) || (@booking.end_date > booking.start_date && @booking.end_date <= booking.end_date)
+            valid = false
+          end
+        end
+      end
+    return valid
+  end
 end
