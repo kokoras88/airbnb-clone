@@ -80,8 +80,10 @@ class GamesController < ApplicationController
 
   def check_if_booked
     booked = false
-    @current_user.bookings.each do |booking|
-      booked = true if booking.game == @game
+    if @current_user
+      @current_user.bookings.each do |booking|
+        booked = true if booking.game == @game
+      end
     end
     @booked = booked
   end
