@@ -1,34 +1,34 @@
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    <% @games.each do |game| %>
-      <div class="card" style="background: #050e2d;">
-        <div style="margin-bottom: 10px">
+<div class="card-container">
+  <div class="row">
+    <h1>CHECK OUT ALL THE AVAILABLE GAMES</h1>
+  </div>
+
+  <div class="row">
+    <%= link_to 'Add a new game listing', new_game_path, class: 'cssbuttons-io-button' %>
+  </div>
+
+  <div class="row">
+    <div id="main-grid">
+      <% @games.each_with_index do |game, index| %>
+        <% class_name = ['left', 'center', 'right'][index % 3 ] %>
+        <div class="card <%= class_name %>" style="background: #050e2d;">
           <div class="card_content">
-            <div class="content">
-              <div class="front" style= "background-image: url('<%= cl_image_path game.photo.key,
-                width: 400, height: 300, crop: :fill %>');">
-                <div>
-                  <p class="subtitle"><%= game.title %></p>
-                </div>
-              </div>
-              <div class="back">
-                <div>
-                  <p class="subtitle"><%= game.description.first(24) %>...</p>
-                  <p class="subtitle">Price: <%= game.price %></p>
-                </div>
-              </div>
+            <div class="card_image">
+              <img src="<%= cl_image_path game.photo.key %>" alt="<%= game.title %>" style="width: 100%;">
+            </div>
+            <div class="card_details">
+              <h1 class="title"><%= game.title %></h1>
+              <h2 class="subtitle"><%= game.description %></h2>
+            </div>
+            <div class="card_footer">
+              <p class="subtitle">Price: <%= game.price %></p>
+              <%= button_to game_path(game), class: 'play-button', method: :get do %>
+                PLAY
+              <% end %>
             </div>
           </div>
         </div>
-        <div style="display:flex">
-          <button style="margin-right: 1px" class="info_button">
-            <%= link_to 'Info', game_path(game) %>
-          </button>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
-
-
-<%# how to add a link to a button? %>
