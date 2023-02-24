@@ -1,74 +1,98 @@
-.game-container{
-  // background: #050e2d;
-
-  .game-banner{
-    position: relative;
-  }
-
-  .game-title{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.607);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    font-family: 'Odibee Sans', cursive;
-    font-size: 48px;
-    letter-spacing: 0.1em;
-    color: antiquewhite;
-  }
-
-  .game-wrapper{
-    background-repeat: repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
-    // justify-content: space-between;
-    // background: #162a7291;
-    padding-left: 15px;
-    padding-right: 15px;
-
-    .game-container{
-      .game-information{
-        border-radius: 15px;
-        background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
-        padding: 5px;
-        border: 1px solid black;
-        border-top: none;
-        border-bottom: none;
-        margin-bottom: 10px;
-        padding: 25px;
-        font-size: 20px;
-        font-family: 'Varela', sans-serif;
-        color: antiquewhite;
-      }
-
-      .game-reviews{
-        border-radius: 15px;
-        background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
-        padding: 5px;
-        border: 1px solid black;
-        border-bottom: none;
-        padding: 25px;
-      }
-    }
-    .booking-wraper{
-      padding: 50px;
-      max-width: 1500;
-      .game-booking{
-        border-radius: 15px;
-        display: flex;
-        justify-content: space-evenly;
-        background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
-        padding: 25px;
-        padding-bottom: 0px;
-      }
-    }
-
-  }
+.game-banner{
+  position: relative;
 }
+
+.game-title{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.607);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  font-family: 'Odibee Sans', cursive;
+  font-size: 48px;
+  letter-spacing: 0.1em;
+  color: antiquewhite;
+}
+
+
+.game-wrapper {  display: grid;
+  grid-template-columns: 0.5fr 1.6fr 0.9fr 0.7fr 1.3fr 1.5fr 0.5fr;
+  grid-template-rows: 1fr 1.5fr 1.5fr 1.5fr 1.5fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . . . ."
+    ". game-container game-container . booking-wrapper booking-wrapper ."
+    ". game-container game-container . booking-wrapper booking-wrapper ."
+    ". game-container game-container . booking-wrapper booking-wrapper ."
+    ". . . . . . .";
+  background: linear-gradient(to left, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url('https://img.freepik.com/free-photo/blue-designed-grunge-concrete-texture-vintage-background-with-space-text-image_1258-108930.jpg?w=2000&t=st=1677102187~exp=1677102787~hmac=713b6c102aebd17c5b3f187011fc5f0b285e38e5a5ac428ed9932197b6b56c50')
+}
+
+.game-container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 0.5fr 1.5fr;
+  gap: 20px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "game-information game-information game-information"
+    "game-information game-information game-information"
+    "game-information game-information game-information"
+    "game-links game-links game-links"
+    "game-reviews game-reviews game-reviews";
+  grid-area: game-container;
+}
+
+.game-links { grid-area: game-links; }
+
+.game-information {
+  grid-area: game-information;
+  border-radius: 15px;
+  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  padding: 5px;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+  margin-bottom: 10px;
+  padding: 25px;
+  font-size: 20px;
+  font-family: 'Varela', sans-serif;
+  color: antiquewhite;
+ }
+
+.game-reviews {
+  grid-area: game-reviews;
+  border-radius: 15px;
+  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  padding: 5px;
+  border: 1px solid black;
+  border-bottom: none;
+  padding: 25px;
+}
+
+.booking-wrapper {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "booking-form booking-form booking-details booking-details"
+    "booking-form booking-form booking-details booking-details"
+    "calendar calendar calendar calendar"
+    "calendar calendar calendar calendar";
+  grid-area: booking-wrapper;
+  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  padding: 25px;
+  padding-bottom: 0px;
+}
+
+.booking-form { grid-area: booking-form; }
+
+.booking-details { grid-area: booking-details; }
+
+.calendar { grid-area: calendar; }

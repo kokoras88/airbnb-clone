@@ -1,5 +1,3 @@
-<%= render 'shared/navbar' %>
-
 <h1>My reviews</h1>
 <% @reviews.each do |review| %>
 <p><%=review.game.title%> Stars: <%=review.rating%></p>
