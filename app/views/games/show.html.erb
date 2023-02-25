@@ -30,13 +30,16 @@
       </div>
       <% if user_signed_in? %>
         <div class="booking-wrapper">
-          <div class="booking-form">
+          <div class = "booking">
+            <div class="booking-form">
             <h1>BOOKINGS</h1>
             <%= render partial: 'bookings/show', locals: { bookings: @bookings, booking: @booking, current_user: @current_user } %>
+            </div>
+            <div class="booking-details">
+              <%= render partial: 'bookings/details', locals: { bookings: @bookings, game: @game, booking: @booking, current_user: @current_user } %>
+            </div>
           </div>
-          <div class="booking-details">
-            <%= render partial: 'bookings/details', locals: { bookings: @bookings, game: @game, booking: @booking, current_user: @current_user } %>
-          </div>
+
           <div class="calendar">
             <%= render partial: 'bookings/calendar', locals: { bookings: @bookings, game: @game, current_user: @current_user} %>
           </div>
