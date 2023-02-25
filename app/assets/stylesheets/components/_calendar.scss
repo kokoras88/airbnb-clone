@@ -1,9 +1,28 @@
 #calendar {
-  max-width: 1100px;
-  margin: 40px auto;
-  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  background: $ebony-clay-700;
   // background-image: linear-gradient(to bottom, #050e2d, black);
-  box-shadow: inset 0 0 1.6em -0.6em #7742c7;
+  // box-shadow: 0 0 1.6em -0.6em $ebony-clay-300;
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
+
+  a{
+    text-decoration: none;
+    color: antiquewhite;
+  }
+
+  button{
+    background: $port-gore-700;
+  }
+
+  .fc-header-toolbar{
+    border: 3px solid $port-gore-500;
+    background: $ebony-clay-800;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .fc-view-harness{
+    background: $ebony-clay-800;
+  }
+
 }

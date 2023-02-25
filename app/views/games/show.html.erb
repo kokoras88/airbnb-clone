@@ -9,11 +9,8 @@
     </div>
   <div class='game-wrapper'>
       <div class="game-container">
-        <div class="game-links">
-          <p><%= link_to 'Edit game listing', edit_game_path(@game), class: 'btn btn-primary' if policy(@game).edit?%></p>
-          <p><%= link_to 'Delete game listing', game_path(@game), class: 'btn btn-danger',
-          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }if policy(@game).edit?%></p>
-          <p><%= link_to 'Back to games', games_path, class: 'btn btn-info' %></p>
+        <div class = 'game-header'>
+          <h1>About this Game</h1>
         </div>
         <div class="game-information">
           <p><%= @game.description %></p>
@@ -23,23 +20,24 @@
           <% end %>
           </p>
         </div>
+        <div class="game-links">
+          <%= link_to 'Edit game listing', edit_game_path(@game), class: 'btn-edit btn btn-primary' if policy(@game).edit?%>
+          <%= link_to 'Delete game listing', game_path(@game), class: 'btn-delete btn btn-danger',
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }if policy(@game).edit?%>
+        </div>
         <div class="game-reviews">
           <%= render 'shared/all_reviews' %>
-          <%= link_to "Write a Review", new_game_review_path(@game) if @booked%>
+          <div class = 'review-button'>
+            <%= link_to "Write a Review", new_game_review_path(@game), class: 'btn btn-info' if @booked%>
+          </div>
         </div>
       </div>
       <% if user_signed_in? %>
-        <div class="booking-wrapper">
-          <div class = "booking">
-            <div class="booking-form">
-            <h1>BOOKINGS</h1>
-            <%= render partial: 'bookings/show', locals: { bookings: @bookings, booking: @booking, current_user: @current_user } %>
-            </div>
-            <div class="booking-details">
-              <%= render partial: 'bookings/details', locals: { bookings: @bookings, game: @game, booking: @booking, current_user: @current_user } %>
-            </div>
+        <div class = 'booking-wrapper'>
+          <div class="booking">
+            <h1 class = 'bookings-header'>BOOKINGS</h1>
+            <%= render partial: 'bookings/form', locals: { bookings: @bookings, booking: @booking, current_user: @current_user } %>
           </div>
-
           <div class="calendar">
             <%= render partial: 'bookings/calendar', locals: { bookings: @bookings, game: @game, current_user: @current_user} %>
           </div>

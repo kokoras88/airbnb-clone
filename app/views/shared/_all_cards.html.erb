@@ -11,7 +11,7 @@
     <div id="main-grid">
       <% @games.each_with_index do |game, index| %>
         <% class_name = ['left', 'center', 'right'][index % 3 ] %>
-        <div class="card <%= class_name %>" style="background: #050e2d;">
+        <div class="card <%#= class_name %>" style="background: #050e2d;">
           <div class="card_content">
             <div class="card_image">
               <img src="<%= cl_image_path game.photo.key %>" alt="<%= game.title %>" style="width: 100%;">
