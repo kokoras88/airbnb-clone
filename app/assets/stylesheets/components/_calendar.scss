@@ -1,3 +1,17 @@
+// #calendar {
+//   max-width: 1100px;
+//   margin: 40px auto;
+//   background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+//   // background-image: linear-gradient(to bottom, #050e2d, black);
+//   box-shadow: inset 0 0 1.6em -0.6em #7742c7;
+//   padding: 20px;
+//   border-radius: 20px;
+// }
+
+#calendar, #calendar * {
+  text-decoration: none;
+  text-align: center;
+}
 #calendar {
   background: $ebony-clay-700;
   // background-image: linear-gradient(to bottom, #050e2d, black);
@@ -23,6 +37,79 @@
 
   .fc-view-harness{
     background: $ebony-clay-800;
+  }
+
+
+  //flex: 1;
+  //margin-top: 2rem;
+  //border-radius: 20px;
+  //text-decoration: none;
+
+  .fc-toolbar {
+    //text-align: center;
+    //border: none;
+    //background-color: #eaffff;
+    //display: flex;
+   // justify-content: space-between;
+    //align-items: center;
+    //padding: 1rem;
+   // border-top-left-radius: 20px;
+    //border-top-right-radius: 20px;
+
+    .fc-button-group {
+     // margin-right: 1rem;
+
+      button {
+        //background-color: #037c9b;
+        //color: #eaffff;
+        //border: 1px solid #e3e3e3;
+        //border-radius: 4px;
+        //padding: 0.5rem 1rem;
+
+        &.fc-button-active {
+          //background-color: #484848;
+          //color: white;
+        }
+
+        &:hover {
+          //background-color: #00c5e5;
+        }
+      }
+    }
+
+    h2 {
+      //font-size: 1.5rem;
+      //font-weight: 600;
+      //margin: 0;
+      //color: #484848;
+    }
+  }
+
+  .fc-day-header {
+    //text-align: center;
+    //font-size: 0.9rem;
+    //font-weight: 600;
+   // padding: 0.5rem;
+    //background-color: #eaffff;
+    //text-decoration: none;
+  }
+
+  .fc-day {
+   // padding: 0.5rem;
+    //background-color: #eaffff;
+    //text-decoration: none;
+
+    &:hover {
+      //background-color: #00c5e5;
+    }
+
+    &.fc-today {
+      //background-color: #e6eeffd1;
+    }
+  }
+
+  .fc-event {
+    //cursor: pointer;
   }
 
 }
