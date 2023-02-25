@@ -1,74 +1,132 @@
-.game-container{
-  // background: #050e2d;
+.game-banner{
+  position: relative;
+}
 
-  .game-banner{
-    position: relative;
-  }
+.game-title{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.607);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  font-family: 'Odibee Sans', cursive;
+  font-size: 48px;
+  letter-spacing: 0.1em;
+  color: antiquewhite;
+}
 
-  .game-title{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.607);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 15px;
-    padding-top: 15px;
-    font-family: 'Odibee Sans', cursive;
-    font-size: 48px;
-    letter-spacing: 0.1em;
-    color: antiquewhite;
-  }
 
-  .game-wrapper{
-    background-repeat: repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
-    // justify-content: space-between;
-    // background: #162a7291;
-    padding-left: 15px;
-    padding-right: 15px;
+.game-wrapper {  display: grid;
+  grid-template-columns: 0.5fr 1.2fr 1.3fr 1fr 1.3fr 1.2fr 0.5fr;
+  grid-template-rows: 0.1fr 0.25fr 0.25fr 0.125fr 0.250fr 0.25fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . . . ."
+    ". game-container game-container . booking-wrapper booking-wrapper ."
+    ". game-container game-container . booking-wrapper booking-wrapper ."
+    ". game-container game-container . booking-wrapper booking-wrapper ."
+    ". game-container game-container . . . ."
+    ". game-container game-container . . . .";
+  // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0)), url('https://i.pinimg.com/originals/5a/6f/fa/5a6ffa53e1874276e8f042e58510f7c5.jpg');
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0)), #050e2d;;
+}
 
-    .game-container{
-      .game-information{
-        border-radius: 15px;
-        background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
-        padding: 5px;
-        border: 1px solid black;
-        border-top: none;
-        border-bottom: none;
-        margin-bottom: 10px;
-        padding: 25px;
-        font-size: 20px;
-        font-family: 'Varela', sans-serif;
-        color: antiquewhite;
-      }
+.game-container {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.1fr 1.1fr 0.6fr 1.1fr 1.1fr;
+  gap: 20px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "game-information game-information"
+    "game-information game-information"
+    "game-links game-links"
+    "game-reviews game-reviews"
+    "game-reviews game-reviews";
+  grid-area: game-container;
+}
 
-      .game-reviews{
-        border-radius: 15px;
-        background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
-        padding: 5px;
-        border: 1px solid black;
-        border-bottom: none;
-        padding: 25px;
-      }
-    }
-    .booking-wraper{
-      padding: 50px;
-      max-width: 1500;
-      .game-booking{
-        border-radius: 15px;
-        display: flex;
-        justify-content: space-evenly;
-        background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
-        padding: 25px;
-        padding-bottom: 0px;
-      }
-    }
+.game-links {
+  display: flex;
+  justify-content: space-between;
+  grid-area: game-links;
+ }
 
-  }
+.game-information {
+  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  // background-image: linear-gradient(to bottom, #050e2d, black);
+  box-shadow: inset 0 0 1.6em -0.6em #7742c7;
+  grid-area: game-information;
+  border-radius: 15px;
+  padding: 5px;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+  margin-bottom: 10px;
+  padding: 25px;
+  font-size: 20px;
+  font-family: 'Varela', sans-serif;
+  color: antiquewhite;
+ }
+
+.game-reviews {
+  grid-area: game-reviews;
+  border-radius: 15px;
+  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  // background-image: linear-gradient(to bottom, #050e2d, black);
+  box-shadow: inset 0 0 1.6em -0.6em #7742c7;
+  padding: 5px;
+  border: 1px solid black;
+  border-bottom: none;
+  padding: 25px;
+}
+
+.booking-wrapper {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.2fr 1.2fr 0.6fr;
+  gap: 30px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "booking booking"
+    "calendar calendar"
+    "calendar calendar";
+  grid-area: booking-wrapper;
+  padding: 25px;
+  padding-bottom: 0px;
+}
+
+.booking-form { grid-area: booking-form; }
+
+.booking {
+  border-radius: 15px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 20px;
+  grid-template-areas:
+    "booking-form booking-details";
+  grid-area: booking;
+  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  // background-image: linear-gradient(to bottom, #050e2d, black);
+  // box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+  box-shadow: inset 0 0 1.6em -0.6em #7742c7;
+}
+
+.booking-details { grid-area: booking-details; }
+
+.calendar {
+  grid-area: calendar;
+}
+
+#calendar{
+  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  // background-image: linear-gradient(to bottom, #050e2d, black);
+  box-shadow: inset 0 0 1.6em -0.6em #7742c7;
+  padding: 20px;
+  border-radius: 20px;
 }
