@@ -1,3 +1,13 @@
+.back{
+  position: sticky;
+  top: 0px;
+}
+
+.btn-back{
+
+}
+
+
 .game-banner{
   position: relative;
 }
@@ -20,113 +30,186 @@
 }
 
 
-.game-wrapper {  display: grid;
-  grid-template-columns: 0.5fr 1.2fr 1.3fr 1fr 1.3fr 1.2fr 0.5fr;
-  grid-template-rows: 0.1fr 0.25fr 0.25fr 0.125fr 0.250fr 0.25fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    ". . . . . . ."
-    ". game-container game-container . booking-wrapper booking-wrapper ."
-    ". game-container game-container . booking-wrapper booking-wrapper ."
-    ". game-container game-container . booking-wrapper booking-wrapper ."
-    ". game-container game-container . . . ."
-    ". game-container game-container . . . .";
-  // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0)), url('https://i.pinimg.com/originals/5a/6f/fa/5a6ffa53e1874276e8f042e58510f7c5.jpg');
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0)), #050e2d;;
-}
-
-.game-container {  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1.1fr 1.1fr 0.6fr 1.1fr 1.1fr;
-  gap: 20px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "game-information game-information"
-    "game-information game-information"
-    "game-links game-links"
-    "game-reviews game-reviews"
-    "game-reviews game-reviews";
-  grid-area: game-container;
-}
-
-.game-links {
+.game-wrapper {
   display: flex;
-  justify-content: space-between;
-  grid-area: game-links;
- }
+  justify-content: space-evenly;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  // display: grid;
+  // grid-template-columns: 0.5fr 1.2fr 1.3fr 0.5fr 1.3fr 1.2fr 0.5fr;
+  // grid-template-rows: auto;
+  // padding-top: 40px;
+  // gap: 0px 0px;
+  // grid-auto-flow: row;
+  // grid-template-areas:
+  //   ". game-container game-container . booking-wrapper booking-wrapper .";
+  // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0)), url('https://i.pinimg.com/originals/5a/6f/fa/5a6ffa53e1874276e8f042e58510f7c5.jpg');
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0)), #1b2141;
+}
+
+.game-container {
+  width: 30%;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-template-rows: 0.5fr 0.1fr 0.5fr;
+  // gap: 0px 0px;
+  // grid-auto-flow: row;
+  // grid-template-areas:
+  //   "game-information game-information"
+  //   "game-links game-links "
+  //   "game-reviews game-reviews";
+  // grid-area: game-container;
+}
+
+.game-header{
+  display: flex;
+  justify-content: center;
+  background: $ebony-clay-800;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 25px;
+  margin: 0;
+}
 
 .game-information {
-  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  background: $ebony-clay-700;
   // background-image: linear-gradient(to bottom, #050e2d, black);
-  box-shadow: inset 0 0 1.6em -0.6em #7742c7;
-  grid-area: game-information;
-  border-radius: 15px;
-  padding: 5px;
-  border: 1px solid black;
+  // box-shadow: none 0 0 1.6em -0.6em $black-pearl-300;
+  // grid-area: game-information;
+  // border-top-left-radius: 10px;
+  // border-top-right-radius: 10px;
+  // border: 1px solid black;
   border-top: none;
   border-bottom: none;
-  margin-bottom: 10px;
   padding: 25px;
   font-size: 20px;
   font-family: 'Varela', sans-serif;
   color: antiquewhite;
  }
 
+.game-links {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: linear-gradient(to bottom, $ebony-clay-800, $ebony-clay-700);
+  display: flex;
+  // justify-content: space-between;
+  // align-items: bottom;
+  // padding: 25px;
+  // grid-area: game-links;
+
+  .btn{
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    font-size: 1.25em;
+    width: 50%;
+    height: 100%;
+  }
+
+  .btn-edit{
+    border-bottom-left-radius: 10px;
+    padding: 15px;
+  }
+
+  .btn-delete{
+    border-bottom-right-radius: 10px;
+    padding: 15px;
+  }
+ }
+
 .game-reviews {
-  grid-area: game-reviews;
-  border-radius: 15px;
-  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  // display: grid;
+  // grid-template-columns: 1fr 1.3fr 0.7fr;
+  // grid-template-rows: auto;
+  // gap: 0px 0px;
+  // grid-template-areas:
+  // "reviews-header reviews-header reviews-header"
+  // "reviews reviews reviews"
+  // "review-button review-button review-button";
+  // grid-area: game-reviews;
+  margin-top: 20px;
+  // border-radius: 10px;
+  // background: $ebony-clay-700;
   // background-image: linear-gradient(to bottom, #050e2d, black);
-  box-shadow: inset 0 0 1.6em -0.6em #7742c7;
-  padding: 5px;
-  border: 1px solid black;
-  border-bottom: none;
+  // box-shadow: 0 0 0.5em 0.2em $ebony-clay-300;
+  // border: 1px solid black;
+  // border-bottom: none;
+}
+
+.reviews-header{
+  display: flex;
+  justify-content: center;
+  background: $ebony-clay-800;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 25px;
+  margin: 0;
+}
+.reviews{
+  background: $ebony-clay-700;
   padding: 25px;
 }
 
-.booking-wrapper {  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1.2fr 1.2fr 0.6fr;
-  gap: 30px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "booking booking"
-    "calendar calendar"
-    "calendar calendar";
-  grid-area: booking-wrapper;
-  padding: 25px;
-  padding-bottom: 0px;
+.review-button{
+  display: flex;
+  justify-content: center;
+  background: $ebony-clay-800;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  .btn{
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    font-size: 1.5em;
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 25px;
+  }
 }
 
-.booking-form { grid-area: booking-form; }
+
+
+.booking-wrapper {
+  width: 25%;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: auto;
+  // gap: 15px 0px;
+  // grid-auto-flow: row;
+  // grid-template-areas:
+  //   "booking "
+  //   "calendar "
+  //   ".";
+  // grid-area: booking-wrapper;
+
+}
 
 .booking {
-  border-radius: 15px;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 20px;
-  grid-template-areas:
-    "booking-form booking-details";
-  grid-area: booking;
-  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  border-radius: 10px;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-template-rows: 1fr;
+  // grid-template-areas:
+  //   "booking-form booking-form";
   // background-image: linear-gradient(to bottom, #050e2d, black);
   // box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
-  box-shadow: inset 0 0 1.6em -0.6em #7742c7;
+  // box-shadow: 0 0 1.6em -0.6em $ebony-clay-300;
+  margin-bottom: 20px;
 }
 
-.booking-details { grid-area: booking-details; }
 
-.calendar {
-  grid-area: calendar;
-}
-
-#calendar{
-  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
-  // background-image: linear-gradient(to bottom, #050e2d, black);
-  box-shadow: inset 0 0 1.6em -0.6em #7742c7;
+.bookings-header{
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   padding: 20px;
-  border-radius: 20px;
+  background: $ebony-clay-800;
+}
+
+.booking-form{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 20px;
+  background: $ebony-clay-700;
 }

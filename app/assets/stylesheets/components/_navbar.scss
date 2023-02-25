@@ -3,7 +3,7 @@
   // overflow: hidden;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   transition: 0.5s;
   z-index: 1000;
 }
@@ -65,10 +65,12 @@
   padding: 14px 16px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.btn-back{
+  border-radius: 15px;
+  margin-right: 10px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.btn-back:hover {
+  border-radius: 15px;
+  margin-right: 10px;
 }

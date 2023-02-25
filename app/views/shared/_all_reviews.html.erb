@@ -1,5 +1,7 @@
-<h1>REVIEWS</h1>
-<% @reviews.last(5).each do |review| %>
-  <h3>From <%= review.user.first_name %>:</h3>
-  <p><%= review.content %> (rating: <%= review.rating %>)</p>
-<% end %>
+<h1 class= 'reviews-header'>Games Reviews</h1>
+<div class='reviews'>
+  <% @reviews.last(5).each do |review| %>
+    <h3>From <%= review.user.first_name %>:</h3>
+    <p><%= review.content %> (rating: <%= review.rating %>)</p>
+  <% end %>
+</div>
