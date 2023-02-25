@@ -1,94 +1,206 @@
 // Specific CSS for your home-page
 body{
   margin: 0;
-  background: #050e2d;
+  background: linear-gradient(90deg, $green-vogue-900, black);
+  // background-size: 400% 400%;
+  // animation: gradientBG 60s ease infinite;
 }
-// .home-container{
-//   width: 100%;
-//   height: 100%;
+
+// @keyframes gradientBG {
+//   0% {
+//     background-position: 0% 50%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 0% 50%;
+//   }
 // }
-.banner{
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  padding: 0px 100px;
+
+.welcome-container{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home {
+  background-image: url('https://cdna.artstation.com/p/assets/images/images/024/538/828/original/pixel-jeff-clipc-s.gif?1582740521');
+}
+
+.banner {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 2px solid $green-vogue-300;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+
+  .bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 960px;
+  }
+
+  img {
+    object-fit: cover;
+    max-width: 50%;
+    height: auto;
+    border-radius: 20px;
+    margin-right: 20px;
+    mask-image: radial-gradient( rgba(0,0,0,1) 13%, rgba(0,0,0,0) 81%);
+  }
+
+  .content {
+    position: relative;
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+    background:  rgba(0, 0, 0, 0.356);
+    border-radius: 20px;
+    padding-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: $green-vogue-50;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1em;
+    color: $green-vogue-50;
+    margin-bottom: 20px;
+    padding-bottom: 10%;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid $green-vogue-300;
+    color:$green-vogue-50;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  a:hover{
+      background: $green-vogue-300;
+      border: none;
+      color: #050e2d;
+    }
 }
-.banner img{
-  width: 70%;
-  height: 100%;
-  border-radius: 20px;
-}
-.banner .bg{
+
+
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2px solid $green-vogue-300;
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
   align-items: center;
-}
-.banner .bg .content{
-  width: 80%;
-  height: 60%;
-  background-color: #050e2d;
+  padding: 20px;
+
+  img {
+    width: 30%;
+    height: 60%;
+    border-radius: 20px;
+    margin: 0 10%;
+  }
+
+  .contentBx {
+    position: relative;
+    width: 50%;
+  }
+
+  h2 {
+    font-size: 2em;
+    color: $green-vogue-50;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1em;
+    color: $green-vogue-50;
+    text-align: justify;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid $green-vogue-300;
+    color: $green-vogue-50;
+    border-radius: 5px;
+  }
+
+  a:hover{
+      background: $green-vogue-300;
+      border: none;
+      color: #050e2d;
+    }
 }
 
-.banner .bg .content h2{
-  font-size: 2em;
-  color: antiquewhite;
-  // color: #050e2d;
-  // color: rgb(2, 2, 2);
-  letter-spacing: 1px;
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+  }
+  .about {
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contentBx {
+    width: 100%;
+    margin: 0;
+  }
+
+  .contentBx,
+  img {
+    width: 100%;
+    width: 100%;
+  }
+
+  .about p {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
 }
 
-.banner .bg .content p{
-  font-size: 1em;
-  color: #050e2d;
-  letter-spacing: 1px;
-}
+// // The @media screen and (max-width: 768px) at the beginning of the code is a media query.
+// It specifies that the following CSS rules should only apply when the screen width is less than or equal to 768 pixels.
+// The .about { flex-direction: column; } rule specifies that the flex-direction of the .about element should be set to column.
+// This means that the child elements of .about will be stacked vertically instead of horizontally, as they are in the default row direction.
+// The .contentBx, img { width: 100%; margin: 20px 0; } rule sets the width of both the .contentBx elements and img elements to 100% of their parent element, which will make them take up the full width of the screen.
+// It also adds a 20px margin to the top and bottom of each element, which will create some spacing between them.
+// Overall, this code is adjusting the layout of the .about section and its child elements when the screen width is less than or equal to 768 pixels.
+// By setting the flex-direction of .about to column and the width of its child elements to 100%, the code creates a vertically stacked layout that is more appropriate for smaller screens.
 
-.banner .bg .content a{
+.loader {
+  width: 0;
+  height: 4.8px;
   display: inline-block;
-  padding: 10px 20px;
-  margin: 20px 0;
-  border: 1px solid #1aeeef;
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: 5px;
-  color: #fff;
-  letter-spacing: 1px;
-}
-.banner .bg .content a:hover{
-  background: #1aeeef;
-  border: none;
-  color: #050e2d;
-}
-
-.about{
   position: relative;
-  width: 100%;
-  min-height: 75vh;
-  padding: 0px 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: $green-vogue-300;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  animation: animFw 8s linear infinite;
 }
 
-.about.contentBx{
-  width: 50%;
-  margin: 20px;
-}
+@keyframes animFw {
+  0% {
+    width: 0;
+  }
 
-.about .contentBx h2{
-  font-size: 3em;
-  font-weight: 700;
-  color: #fff;
-}
-
-.about .contentBx p{
-  max-width:  600px;
-  text-align: justify;
-  color: #dbd9d9;
+  100% {
+    width: 100%;
+  }
 }
