@@ -109,7 +109,7 @@
 
   .btn{
     letter-spacing: 0.03em;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1em;
     width: 15%;
     // height: 50%;
@@ -118,6 +118,8 @@
   .btn-edit{
     border-radius: 10px;
     padding: 5px;
+    background: $green-vogue-400;
+    color: black;
   }
 
   .btn-delete{
@@ -216,11 +218,6 @@
   padding: 20px;
   // background: $ebony-clay-700;
   // border-bottom: 1px solid antiquewhite;
-
-  .simple_form{
-    .mb-3{
-    }
-  }
 }
 
 .btn-reserve{
@@ -235,7 +232,8 @@
   border-radius: 15px;
 
   &:hover{
-    background: white;
+    background: $mardi-gras-300;
+    color: black;
   }
 }
 
