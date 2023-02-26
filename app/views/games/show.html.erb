@@ -20,6 +20,11 @@
             <%= link_to category.name, category_path(category), class: 'btn btn-light' %>
           <% end %>
           </p>
+          <div class="game-links">
+            <%= link_to 'Edit', edit_game_path(@game), class: 'btn-edit btn btn-primary' if policy(@game).edit?%>
+            <%= link_to 'Delete', game_path(@game), class: 'btn-delete btn btn-danger',
+             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@game).edit? %>
+          </div>
         </div>
       </div>
       <div class="game-reviews">
@@ -40,8 +45,3 @@
       </div>
   </div>
 </div>
-<%# <div class="game-links"> %>
-  <%# <%= link_to 'Edit game listing', edit_game_path(@game), class: 'btn-edit btn btn-primary' if policy(@game).edit?%>
-  <%# <%= link_to 'Delete game listing', game_path(@game), class: 'btn-delete btn btn-danger', %>
-  <%# data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }if policy(@game).edit?%>
-<%# </div> %>

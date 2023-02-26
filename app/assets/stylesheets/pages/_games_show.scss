@@ -98,29 +98,34 @@
 .game-links {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: linear-gradient(to bottom, $ebony-clay-800, $ebony-clay-700);
+  // background: linear-gradient(to bottom, $ebony-clay-800, $ebony-clay-700);
   display: flex;
+  justify-content: end;
   // justify-content: space-between;
   // align-items: bottom;
   // padding: 25px;
   // grid-area: game-links;
+  // height: 5%;
 
   .btn{
     letter-spacing: 0.03em;
-    font-weight: 500;
-    font-size: 1.25em;
-    width: 50%;
-    height: 100%;
+    font-weight: 600;
+    font-size: 1em;
+    width: 15%;
+    // height: 50%;
   }
 
   .btn-edit{
-    border-bottom-left-radius: 10px;
-    padding: 15px;
+    border-radius: 10px;
+    padding: 5px;
+    background: $green-vogue-400;
+    color: black;
   }
 
   .btn-delete{
-    border-bottom-right-radius: 10px;
-    padding: 15px;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 5px;
   }
  }
 
@@ -213,11 +218,6 @@
   padding: 20px;
   // background: $ebony-clay-700;
   // border-bottom: 1px solid antiquewhite;
-
-  .simple_form{
-    .mb-3{
-    }
-  }
 }
 
 .btn-reserve{
@@ -232,7 +232,8 @@
   border-radius: 15px;
 
   &:hover{
-    background: white;
+    background: $mardi-gras-300;
+    color: black;
   }
 }
 
