@@ -46,8 +46,6 @@ class BookingsController < ApplicationController
 
   def booking_check
     valid = true
-
-
       Booking.all.each do |booking|
         x1 = @booking.start_date
         x2 = @booking.end_date

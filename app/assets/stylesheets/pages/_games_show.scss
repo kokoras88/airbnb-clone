@@ -1,12 +1,17 @@
-.back{
-  position: sticky;
-  top: 0px;
+.page-container{
+  // background: $mine-shaft-900;
+  background: linear-gradient(90deg, $green-vogue-900, black);
 }
 
-.btn-back{
-
+.saber {
+  width: 100%;
+  height: 4.8px;
+  display: inline-block;
+  position: relative;
+  background: $green-vogue-300;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
 }
-
 
 .game-banner{
   position: relative;
@@ -32,7 +37,8 @@
 
 .game-wrapper {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
   // display: grid;
@@ -44,11 +50,11 @@
   // grid-template-areas:
   //   ". game-container game-container . booking-wrapper booking-wrapper .";
   // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0)), url('https://i.pinimg.com/originals/5a/6f/fa/5a6ffa53e1874276e8f042e58510f7c5.jpg');
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0)), #1b2141;
+  // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0)), #1b2141;
 }
 
 .game-container {
-  width: 30%;
+  width: 45%;
   // display: grid;
   // grid-template-columns: 1fr 1fr;
   // grid-template-rows: 0.5fr 0.1fr 0.5fr;
@@ -59,32 +65,34 @@
   //   "game-links game-links "
   //   "game-reviews game-reviews";
   // grid-area: game-container;
+  // border-bottom: 1px solid antiquewhite;
+  padding-bottom: 20px;
 }
 
 .game-header{
   display: flex;
   justify-content: center;
-  background: $ebony-clay-800;
+  // background: $ebony-clay-800;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 25px;
+  padding: 15px;
   margin: 0;
+  // border-bottom: 4px solid $green-vogue-300;
 }
 
 .game-information {
-  background: $ebony-clay-700;
+  // background: $ebony-clay-700;
   // background-image: linear-gradient(to bottom, #050e2d, black);
   // box-shadow: none 0 0 1.6em -0.6em $black-pearl-300;
   // grid-area: game-information;
   // border-top-left-radius: 10px;
   // border-top-right-radius: 10px;
   // border: 1px solid black;
-  border-top: none;
-  border-bottom: none;
   padding: 25px;
   font-size: 20px;
   font-family: 'Varela', sans-serif;
   color: antiquewhite;
+  // border-bottom: 1px solid antiquewhite;
  }
 
 .game-links {
@@ -116,17 +124,15 @@
   }
  }
 
-.game-reviews {
-  // display: grid;
-  // grid-template-columns: 1fr 1.3fr 0.7fr;
-  // grid-template-rows: auto;
-  // gap: 0px 0px;
-  // grid-template-areas:
-  // "reviews-header reviews-header reviews-header"
-  // "reviews reviews reviews"
-  // "review-button review-button review-button";
-  // grid-area: game-reviews;
+.game-extras{
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
   margin-top: 20px;
+}
+
+.game-reviews {
+  width: 45%;
   // border-radius: 10px;
   // background: $ebony-clay-700;
   // background-image: linear-gradient(to bottom, #050e2d, black);
@@ -138,78 +144,104 @@
 .reviews-header{
   display: flex;
   justify-content: center;
-  background: $ebony-clay-800;
+  // background: $ebony-clay-800;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 25px;
+  padding: 10px;
   margin: 0;
+  // border-bottom: 1px solid antiquewhite;
 }
+
 .reviews{
-  background: $ebony-clay-700;
+  // background: $ebony-clay-700;
   padding: 25px;
 }
 
 .review-button{
   display: flex;
   justify-content: center;
-  background: $ebony-clay-800;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  padding: 25px;
 
   .btn{
+    border: none;
+    background: $rose-500;
     letter-spacing: 0.05em;
     font-weight: 600;
     font-size: 1.5em;
     height: 100%;
     width: 100%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 10px;
     padding: 25px;
   }
 }
 
-
-
 .booking-wrapper {
-  width: 25%;
-  // display: grid;
-  // grid-template-columns: 1fr;
-  // grid-template-rows: auto;
-  // gap: 15px 0px;
-  // grid-auto-flow: row;
-  // grid-template-areas:
-  //   "booking "
-  //   "calendar "
-  //   ".";
-  // grid-area: booking-wrapper;
-
+  width: 45%;
 }
 
 .booking {
   border-radius: 10px;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr;
-  // grid-template-rows: 1fr;
-  // grid-template-areas:
-  //   "booking-form booking-form";
+  margin-bottom: 20px;
   // background-image: linear-gradient(to bottom, #050e2d, black);
   // box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
   // box-shadow: 0 0 1.6em -0.6em $ebony-clay-300;
-  margin-bottom: 20px;
+  display: flex;
+
 }
 
 
 .bookings-header{
+  display: flex;
+  justify-content: center;
   margin: 0;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  padding: 20px;
-  background: $ebony-clay-800;
+  padding: 10px;
+  // background: $ebony-clay-800;
+  // border-bottom: 1px solid antiquewhite;
 }
 
 .booking-form{
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  // border-bottom-left-radius: 10px;
+  // border-bottom-right-radius: 10px;
   padding: 20px;
-  background: $ebony-clay-700;
+  // background: $ebony-clay-700;
+  // border-bottom: 1px solid antiquewhite;
+
+  .simple_form{
+    .mb-3{
+    }
+  }
+}
+
+.btn-reserve{
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 10px;
+  width: 100%;
+  background: $mardi-gras-300;
+  border: none;
+  // color: antiquewhite;
+  border-radius: 15px;
+
+  &:hover{
+    background: white;
+  }
+}
+
+.calendar{
+  width: 70%;
+}
+
+.reviews-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
 }
