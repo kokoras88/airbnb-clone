@@ -1,4 +1,13 @@
 <h1>Welcome to the Bookings!</h1>
+
+<h2>Game you are currently renting:</h2>
 <% @bookings.each do |booking| %>
 <p><%= booking.game.title%> From: <%=booking.start_date%> To: <%=booking.end_date%></p>
+<% end %>
+
+<h2>Games you have currently listed for rental:</h2>
+<% Game.all.each do |game| %>
+  <% if game.user == current_user %>
+  <p><%= game.title  %> Status: <%= Booking.find_by(game: game) ? "Booked" : "Open" %></p>
+  <% end %>
 <% end %>

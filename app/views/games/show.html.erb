@@ -15,16 +15,16 @@
         <div class = 'saber'></div>
         <div class="game-information">
           <p><%= @game.description %></p>
-          <p><%= @game.price %></p>
           <p><% @game.categories.each do |category| %>
             <%= link_to category.name, category_path(category), class: 'btn btn-light' %>
           <% end %>
-          </p>
           <div class="game-links">
             <%= link_to 'Edit', edit_game_path(@game), class: 'btn-edit btn btn-primary' if policy(@game).edit?%>
             <%= link_to 'Delete', game_path(@game), class: 'btn-delete btn btn-danger',
              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@game).edit? %>
           </div>
+          </p>
+          Price per day: <%= @game.price %>
         </div>
       </div>
       <div class="game-reviews">

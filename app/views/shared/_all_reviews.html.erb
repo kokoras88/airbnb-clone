@@ -4,7 +4,7 @@
   <% unless @reviews == [] %>
   <div class = 'reviews-grid'>
     <% @reviews.each do |review| %>
-      <div>
+      <div class = 'grid-item'>
         <h3>From <%= review.user.first_name %>:</h3>
         <p><%= review.content %> (rating: <%= review.rating %>)</p>
       </div>
