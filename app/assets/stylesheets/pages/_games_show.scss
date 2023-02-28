@@ -252,6 +252,9 @@
 
 
 .btn-back{
+  z-index: 1;
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,7 +267,15 @@
   margin-bottom: 5px;
   background-color: $deep-cerulean-500;
 
+
+
   &:hover{
     background-color: $deep-cerulean-600;
   }
+}
+
+.sticky {
+  position: fixed;
+  top: 75px;
+  right: 5px;
 }
