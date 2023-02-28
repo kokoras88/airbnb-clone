@@ -1,5 +1,13 @@
+<div class="center-container">
 <h1>My reviews</h1>
 <% @reviews.each do |review| %>
-<p><%=review.game.title%> Stars: <%=review.rating%></p>
+ <div class="image-box">
+  <img class="review-games" src="<%= cl_image_path review.game.photo.key %>" alt="<%= review.game.title %>">
+ </div>
+<p></p>
+<p><%=review.game.title%></p>
+<p><%=review.rating%> <i class="fa-solid fa-star"></i></p>
 <p><%=review.content%></p>
 <% end %>
+  </div>
+</div>
