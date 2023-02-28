@@ -11,9 +11,10 @@
 #calendar, #calendar * {
   text-decoration: none;
   text-align: center;
+  border: none;
 }
 #calendar {
-  background: $ebony-clay-700;
+  // background: #031c3d;
   // background-image: linear-gradient(to bottom, #050e2d, black);
   // box-shadow: 0 0 1.6em -0.6em $ebony-clay-300;
   padding: 20px;
@@ -25,18 +26,27 @@
   }
 
   button{
-    background: $port-gore-700;
+    background: $green-vogue-400;
   }
 
   .fc-header-toolbar{
-    border: 3px solid $port-gore-500;
-    background: $ebony-clay-800;
-    padding: 15px;
+    // background: #031c3d;
+    // padding: 15px;
     border-radius: 10px;
   }
 
+  .fc-view{
+    margin: 15px;
+    border-radius: 15px;
+  }
+
+  .fc-scrollgrid{
+    border: none;
+  }
+
   .fc-view-harness{
-    background: $ebony-clay-800;
+    border-radius: 10px;
+    // background: #031c3d;
   }
 
 

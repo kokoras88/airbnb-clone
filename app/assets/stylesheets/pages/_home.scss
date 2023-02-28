@@ -1,4 +1,10 @@
 // Specific CSS for your home-page
+iframe {
+  padding-top: 40px;
+  display: block;
+  margin: 0 auto;
+}
+
 body{
   margin: 0;
   background: linear-gradient(90deg, $green-vogue-900, black);
@@ -26,6 +32,8 @@ body{
 
 .home {
   background-image: url('https://cdna.artstation.com/p/assets/images/images/024/538/828/original/pixel-jeff-clipc-s.gif?1582740521');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .banner {

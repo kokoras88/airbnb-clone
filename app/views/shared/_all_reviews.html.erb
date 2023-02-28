@@ -1,7 +1,16 @@
-<h1 class= 'reviews-header'>Games Reviews</h1>
+<h1 class= 'reviews-header'>Game Reviews</h1>
+<div class = 'saber'></div>
 <div class='reviews'>
-  <% @reviews.last(5).each do |review| %>
-    <h3>From <%= review.user.first_name %>:</h3>
-    <p><%= review.content %> (rating: <%= review.rating %>)</p>
+  <% unless @reviews == [] %>
+  <div class = 'reviews-grid'>
+    <% @reviews.each do |review| %>
+      <div class = 'grid-item'>
+        <h3>From <%= review.user.first_name %>:</h3>
+        <p><%= review.content %> (rating: <%= review.rating %>)</p>
+      </div>
+    <% end %>
+    </div>
+  <% else %>
+    <h3>No reviews have been submitted</h3>
   <% end %>
 </div>

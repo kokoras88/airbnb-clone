@@ -1,4 +1,55 @@
-<h1>Welcome to the Bookings!</h1>
-<% @bookings.each do |booking| %>
-<p><%= booking.game.title%> From: <%=booking.start_date%> To: <%=booking.end_date%></p>
-<% end %>
+<div class = bookings-page-container>
+  <div class = 'booking-header'><h1>Currently Renting</h1></div>
+  <div class = 'saber'></div>
+  <div class = 'booking-grid'>
+    <% @bookings.each do |booking| %>
+      <% if booking.user == current_user %>
+        <div class="card-row">
+            <div class="card-image">
+              <img src="<%= cl_image_path booking.game.photo.key %>" alt="<%= booking.game.title %>">
+            </div>
+            <div class="card-details">
+              <p><%= booking.game.title %></p>
+              <p>Booking Duration: <%= booking.start_date %> to <%= booking.end_date %></p>
+              <% if Date.today >= booking.end_date %>
+                <p style = 'color: green;'>Status: Finished</p>
+                <p>Total charging: <%= (booking.game.price * (booking.end_date - booking.start_date)) %></p>
+              <% else %>
+                <p style = 'color: yellow;'>Status: Ongoing</p>
+                <p>Current charging: <%= ((Date.today - booking.start_date) * booking.game.price) %></p>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class = 'booking-header'><h1>Your Listings</h1></div>
+  <div class = 'saber'></div>
+  <div class = 'booking-grid'>
+    <% Game.all.each do |game| %>
+      <% if game.user == current_user %>
+        <%# <div class="card" style="background: #050e2d;"> %>
+          <div class="card-row">
+            <div class="card-image">
+              <img src="<%= cl_image_path game.photo.key %>" alt="<%= game.title %>">
+            </div>
+            <div class="card-details">
+              <p><%= game.title %></p>
+              <p>Listing added on: <%= game.created_at %></p>
+              <% if booking = Booking.find_by(game: game) %>
+                <p style = 'color: green;'>Status: Booked</p>
+                <p>Booked by: <%= booking.user.first_name %></p>
+                <p>Booking Duration: <%= booking.start_date %> to <%= booking.end_date %></p>
+                <p>Charge per Day: <%= booking.game.price %></p>
+              <% else %>
+                <p style = 'color: yellow;'>Status: Open</p>
+              <% end %>
+              <%# <h2 class="subtitle"><%= game.description</h2> %>
+            </div>
+          </div>
+        <%# </div> %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
