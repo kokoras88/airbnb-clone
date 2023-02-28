@@ -27,5 +27,17 @@
         </div>
         </ul>
     </div>
-    <%= link_to 'Back to games', games_path, class: 'btn-back btn btn-info' if request.path.match(/\/games\/\d/) %>
+
+    <div style = 'display:flex; width: 20%;' >
+      <div class = 'search-form'>
+        <%= form_with url: games_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a game"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
 </div>

@@ -10,8 +10,12 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.all
-    @games = policy_scope(Game)
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR description ILIKE :query"
+      @games = policy_scope(Game).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @games = policy_scope(Game).all
+    end
   end
 
   def new
