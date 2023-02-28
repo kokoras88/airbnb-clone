@@ -40,26 +40,36 @@
   margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1000px) {
   .sub-category-container {
-    width: 90%;
+    width: 80%;
     margin: 20px;
   }
 
   .button-container {
-    width: 100%;
+    width: 70%;
+    margin-left: 50px;
     display: block;
     text-align: left;
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1000px) {
   .sub-category-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin: 0 auto;
     width: 75%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .button-container {
+    width: 80%;
+    margin-left: auto;
+    display: block;
+    text-align: left;
   }
 }
 
