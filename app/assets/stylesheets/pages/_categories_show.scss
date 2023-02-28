@@ -1,0 +1,10 @@
+.title-container {
+  text-align: center;
+  position: sticky;
+  padding: 16px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: linear-gradient(90deg, $green-vogue-900, black);
+}
