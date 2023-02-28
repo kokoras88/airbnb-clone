@@ -6,7 +6,6 @@
   width: 100%;
 }
 
-
 .main-categories::before {
   content: "";
   position: absolute;
@@ -14,17 +13,54 @@
   left: 0;
   width: 100%;
   height: 100%;
-  filter: grayscale(70%);
+  filter: grayscale(50%);
   z-index: -1;
   background-image: url('https://github.blog/wp-content/uploads/2021/10/game-off-gif.gif?resize=2560%2C1084');
   background-size: cover;
   background-position: center;
 }
 
+.sub-category-container {
+  margin: 0 auto;
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+}
+
 .button-container {
   width: 50%;
   float: left;
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .sub-category-container {
+    width: 90%;
+    margin: 20px;
+  }
+
+  .button-container {
+    width: 100%;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .sub-category-container {
+    margin: 0 auto;
+    width: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .category-title {
@@ -46,8 +82,7 @@ a {
   background: transparent;
   border: none;
   color: black;
-  background-color: rgba(127, 255, 212, 0.086);
-  border-bottom: 2px solid $green-vogue-300;
+  background-color: rgba(127, 255, 212, 0);
   font-weight: bold;
 }
 
@@ -55,7 +90,7 @@ a {
 .button-universe {
   --border-right: 6px;
   --text-stroke-color: $green-vogue-50;
-  --animation-color: #37FF8B;
+  --animation-color: #37e1ff;
   --fs-size: 2em;
   letter-spacing: 3px;
   text-decoration: none;
@@ -86,41 +121,3 @@ a {
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color));
 }
-
-// // BUTTON 2
-// .button-universe {
-//   --green: #1BFD9C;
-//   font-size: 15px;
-//   padding: 0.7em 2.7em;
-//   letter-spacing: 0.06em;
-//   position: relative;
-//   font-family: inherit;
-//   border-radius: 0.6em;
-//   overflow: hidden;
-//   transition: all 0.3s;
-//   line-height: 1.4em;
-//   border: 2px solid var(--green);
-//   background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
-//   color: var(--green);
-//   box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
-//  }
-
-//  .button-universe:hover {
-//   color: #82ffc9;
-//   box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
-//  }
-
-//  .button-universe:before {
-//   content: "";
-//   position: absolute;
-//   left: -4em;
-//   width: 4em;
-//   height: 100%;
-//   top: 0;
-//   transition: transform .4s ease-in-out;
-//   background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
-//  }
-
-//  .button-universeton:hover:before {
-//   transform: translateX(15em);
-//  }
