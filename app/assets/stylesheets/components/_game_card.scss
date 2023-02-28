@@ -1,77 +1,111 @@
 body {
   margin: 20px;
 }
-
-.card-container {
-  display: flex;
-  flex-direction: column;
+.main-title {
+  text-align: center;
+  margin-top: 30px;
+  padding: 0;
   justify-content: center;
   align-items: center;
+  border-bottom: 2px solid $green-vogue-300;
 }
 
+.button-add-container {
+  text-align: center;
+  margin-top: 50px;
+  position: sticky;
+  padding: 16px;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, $green-vogue-900, black);
+}
+
+.new-game-btn {
+  position: sticky;
+  top: 0;
+  // background: linear-gradient(to bottom, #000000b1, #00e1ff75);
+}
+
+//// THIS IS ONLY FOR THE BTN
+.new-game-btn,.new-game-btn::after {
+  padding: 10px 50px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  color: $green-vogue-300;
+  background-color: transparent;
+  position: relative;
+  border: 1px solid $green-vogue-300;;
+}
+
+.new-game-btn:hover {
+  background-color: transparent;
+  color: rgb(0, 255, 213);
+  border: 1px solid rgb(0, 255, 213);
+  box-shadow:  rgb(0, 255, 213);
+}
+
+
 .row {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin: 30px ;
 }
 
 .row button {
   margin-left: 20px;
 }
 
-@media only screen and (max-width: 768px) {
-  .card-container {
-    padding: 20px;
-  }
-  .row {
-    flex-direction: column;
-  }
-  .row button {
-    margin-top: 20px;
-    margin-left: 0;
-  }
-}
-
 #main-grid {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
   // justify-content: space-between;
   grid-gap: 10px;
   background: rgba(19, 22, 89, 0);
+
+  /* 3 columns on big screens */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* 2 columns between small and big screens */
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 1 column on small screens */
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-.card {
+.card-games {
   border-radius: 20px;
   flex-basis: calc(33.33% - 2px);
   position: relative;
-  // margin: 3px;
 }
 
 .card_content {
   height: 100%;
   padding: 20px;
-  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
+  background-image: linear-gradient(to bottom, #00000040, #00e1ff34);
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .card_details {
   flex: 1;
-  text-align: center; /* center the title */
+  text-align: center;
   position: relative;
 }
 
 .card_details .title {
   margin: 0;
   margin-bottom: 10px;
-  font-size: 1.5rem; /* increase the font size of the title */
-  border-bottom: 1px solid black; /* add a border bottom to the title */
-  padding-bottom: 5px; /* add some padding to the bottom of the title */
-  padding-top: 10px; /* add some padding to the top of the title */
+  font-size: 1.5rem;
+  border-bottom: 2px solid $green-vogue-300;
+  padding-bottom: 5px;
+  padding-top: 10px;
 }
 
 .card_details .subtitle {
@@ -84,15 +118,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid black; /* add a border top to the footer */
+  border-top: 2px solid $green-vogue-300;
   padding-top: 5px; /* add some padding to the top of the footer */
 }
 
 .card_footer p {
   margin: 0;
   font-size: 18px;
-  border: 1px solid black; /* add borders to the price */
-  padding: 5px; /* add some padding to the price */
+  border: 1px solid $green-vogue-300;
+  padding: 5px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -107,261 +141,3 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
-:where(.card:nth-child(3n+1):hover) {
-  background: rgb(108, 53, 64);
-  flex-basis: calc(60% - 2px);
-}
-
-:where(.card:nth-child(3n+2):hover) {
-  background: rgb(108, 53, 64);
-  flex-basis: calc(70% - 2px);
-}
-
-:where(.card:nth-child(3n+3):hover) {
-  background: rgb(108, 53, 64);
-  flex-basis: calc(70% - 2px);
-}
-
-//// THIS CODE IS ONLY FOR THE BUTTON
-
-.cssbuttons-io-button {
-  background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
-  text-decoration: none;
-  display: flex;
-  font-family: inherit;
-  padding: 0.35em;
-  padding-left: 1.2em;
-  font-size: 17px;
-  font-weight: 500;
-  border-radius: 0.9em;
-  border: none;
-  letter-spacing: 0.05em;
-  justify-content: center;
-  align-items: center;
-  box-shadow: inset 0 0 1.6em -0.6em #7742c7;
-  position: absolute;
-  height: 2.8em;
-  padding-right: 3.3em;
-  color: rgba(255, 255, 255, 0.637);
-}
-
-
-
-
-
-// HERE IS THE CODE WITH THE SCROLLING PART //
-
-// body {
-//   margin: 20px;
-// }
-
-// .card-container {
-//   text-align: center;
-//   padding: 15px;
-//   margin-top: 15px;
-//   h1 {
-//     border-top: 1px solid rgb(255, 255, 255);
-//     border-bottom: 1px solid rgb(255, 255, 255);
-//     margin-bottom: 30px;
-//   }
-// }
-
-// #main-grid {
-//   height: 100vh;
-//   transition: 500ms;
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr;
-//   gap: 3px;
-//   background: rgb(19, 23, 89);
-//   overflow-y: auto; /* enable scrolling */
-// }
-
-// :where(.left, .center, .right) {
-//   background: rgb(190, 140, 65);
-//   transition: 300ms;
-// }
-
-// :where(.left, .center, .right):hover {
-//   background: rgb(108, 53, 64);
-// }
-
-// #main-grid:has(.left:hover) {
-//   grid-template-columns: 0.6fr 0.5fr 0.5fr;
-// }
-
-// #main-grid:has(.center:hover) {
-//   grid-template-columns: 0.5fr 0.6fr 0.5fr;
-// }
-// #main-grid:has(.right:hover) {
-//   grid-template-columns: 0.5fr 0.5fr 0.6fr;
-// }
-
-// .card {
-//   position: relative;
-// }
-
-// .card_content {
-//   justify-content: space-between;
-//   display: flex;
-//   flex-direction: column;
-//   height: 100%;
-//   padding: 20px;
-//   background-image: linear-gradient(to bottom, #55555540, #00e1ff34);
-//   border-radius: 20px;
-//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-// }
-
-// .card_details {
-//   flex: 1;
-//   text-align: center; /* center the title */
-//   position: relative;
-// }
-
-// .card_details .title {
-//   margin: 0;
-//   margin-bottom: 10px;
-//   font-size: 1.5rem; /* increase the font size of the title */
-//   border-bottom: 1px solid black; /* add a border bottom to the title */
-//   padding-bottom: 5px; /* add some padding to the bottom of the title */
-//   padding-top: 10px; /* add some padding to the top of the title */
-// }
-
-// .card_details .subtitle {
-//   margin: 0;
-//   margin-bottom: 20px;
-//   font-size: 1rem; /* decrease the font size of the description */
-// }
-
-// .card_footer {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   border-top: 1px solid black; /* add a border top to the footer */
-//   padding-top: 5px; /* add some padding to the top of the footer */
-// }
-
-// .card_footer p {
-//   margin: 0;
-//   font-size: 18px;
-//   border: 1px solid black; /* add borders to the price */
-//   padding: 5px; /* add some padding to the price */
-// }
-
-// .card_image img {
-//   position: relative;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   border-radius: 10px;
-//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-// }
-
-
-
-
-
-
-// HERE IS THE CODE WITH THE TURNING AROUND CARDS //
-
-// // .card {
-// //   width: 190px;
-// //   height: 254px;
-// //   background: #ffffff;
-// //   position: relative;
-// //   display: flex;
-// //   place-content: center;
-// //   place-items: center;
-// //   overflow: hidden;
-// //   border-radius: 20px;
-// // }
-
-// .content {
-//   text-align: center;
-//   position: relative;
-//   transition: all 2.25s;
-//   background-color: rgb(0, 0, 0);
-//   padding: 5em;
-//   transform-style: preserve-3d;
-//   border-radius: 20px;
-// }
-
-// .card:hover .content {
-//   transform: rotateY(0.5turn);
-// }
-
-// .front,
-// .back {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   right: 0;
-//   padding: 2em;
-//   transform-style: preserve-3d;
-//   backface-visibility: hidden;
-//   border-radius: 20px;
-// }
-
-// .title {
-//   transform: translateZ(5rem);
-//   font-size: 1rem;
-//   color: antiquewhite;
-// }
-
-// .subtitle {
-//   transform: translateZ(2rem);
-//   color: antiquewhite;
-//   font-size: 0.5rem;
-// }
-
-// .front {
-//   padding: 0;
-//   background-position: center;
-//   background-size: cover;
-//   color: antiquewhite;
-// }
-
-// .front img {
-//   border-radius: 20px;
-//   max-width: 100%;
-//   max-height: 100%;
-// }
-
-// .back {
-//   transform: rotateY(0.5turn);
-//   background-color: #000000;
-// }
-
-// .description {
-//   transform: translateZ(3rem);
-//   color: antiquewhite;
-// }
-
-// .img_card {
-//   width: 100%;
-//   height: 100%;
-//   text-align: center;
-//   position: relative;
-//   transition: all 2.25s;
-//   transform-style: preserve-3d;
-//   border-radius: 20px;
-//   background-size: cover;
-//   background-position: center;
-//   padding: 0;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .img_card img {
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   border-radius: 20px;
-// }
