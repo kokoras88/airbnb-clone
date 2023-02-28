@@ -1,12 +1,14 @@
-.page-container{
+.bookings-page-container{
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .saber{
+    width: 40%
+  }
 }
 
-.saber{
-  width: 40%
-}
+
 
 .booking-header{
   padding: 10px;
