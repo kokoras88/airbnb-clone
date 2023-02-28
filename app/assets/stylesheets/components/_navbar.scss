@@ -1,11 +1,11 @@
 .navbar {
   background-color: #1b2141;
-  // overflow: hidden;
   display: flex;
   justify-content: space-between;
-  // align-items: center;
   transition: 0.5s;
   z-index: 1000;
+  background: linear-gradient(90deg, $green-vogue-900, black);
+  border-bottom: 2px solid $green-vogue-300;
 }
 
 .navbar a:hover{
