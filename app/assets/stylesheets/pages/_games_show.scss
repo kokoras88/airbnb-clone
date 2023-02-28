@@ -249,3 +249,22 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
 }
+
+
+.btn-back{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 1.5em;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: $deep-cerulean-500;
+
+  &:hover{
+    background-color: $deep-cerulean-600;
+  }
+}
