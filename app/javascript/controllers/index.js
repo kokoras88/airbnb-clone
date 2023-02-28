@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import StickyController from "./sticky_controller"
+application.register("sticky", StickyController)
+
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
 
