@@ -1,4 +1,6 @@
 .navbar {
+  position: sticky;
+  top: 0;
   background-color: #1b2141;
   // overflow: hidden;
   display: flex;
@@ -73,4 +75,37 @@
 .btn-back:hover {
   border-radius: 15px;
   margin-right: 10px;
+}
+
+.search-form{
+  margin-right: 10px;
+  width: 100%;
+
+  .form-control{
+    padding-left: 10px;
+  }
+
+  #query{
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .btn{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 40%;
+    margin: 0;
+    padding: 3px;
+    border: none;
+    background-color: $mardi-gras-800;
+
+    &:hover{
+      background-color: $mardi-gras-300;
+    }
+  }
 }

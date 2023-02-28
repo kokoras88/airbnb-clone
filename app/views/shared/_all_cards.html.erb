@@ -1,17 +1,17 @@
-<div class="card-container">
-  <div class="row">
-    <h1>CHECK OUT ALL THE AVAILABLE GAMES</h1>
+<div>
+  <div class="main-title">
+    <h1><i class="fa-duotone fa-gamepad-modern"></i>CHECK OUT ALL THE AVAILABLE GAMES</h1>
   </div>
 
-  <div class="row">
-    <%= link_to 'Add a new game listing', new_game_path, class: 'cssbuttons-io-button' %>
+  <div class="button-add-container">
+    <%= link_to '+ Add a new game listing', new_game_path, class: 'new-game-btn' %>
   </div>
 
   <div class="row">
     <div id="main-grid">
       <% @games.each_with_index do |game, index| %>
         <% class_name = ['left', 'center', 'right'][index % 3 ] %>
-        <div class="card <%#= class_name %>" style="background: #050e2d;">
+        <div class="card-games" style="background: #050e2d;">
           <div class="card_content">
             <div class="card_image">
               <img src="<%= cl_image_path game.photo.key %>" alt="<%= game.title %>" style="height: 500px; width: 100%;">
