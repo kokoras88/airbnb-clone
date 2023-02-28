@@ -1,8 +1,10 @@
 <div class='page-container'>
+
   <div class="game-banner" style="
         background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
         url('<%= cl_image_path @game.photo.key, fetch_format: :auto, crop: :fill %>')"
       >
+      <%= link_to 'Back to games', games_path, class: 'btn-back btn' if request.path.match(/\/games\/\d/) %>
       <div class='game-title'>
         <h1><%= @game.title %></h1>
       </div>
