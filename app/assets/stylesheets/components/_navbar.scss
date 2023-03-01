@@ -9,8 +9,6 @@
   z-index: 1000;
   background: linear-gradient(90deg, $green-vogue-900, black);
   border-bottom: 2px solid $green-vogue-300;
-
-
 }
 
 .logo{
@@ -29,7 +27,7 @@
 }
 
 .navbar a:hover{
-  padding: 10px 20px;
+  // padding: 10px 20px;
   border-radius: 5px;
 }
 
@@ -48,7 +46,8 @@
   text-align: center;
   padding: 0px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 18px;
+  font-family: 'Archivo Black', sans-serif;
 }
 
 .navbar input{
@@ -70,10 +69,14 @@
 
 .navbar .dropdown-menu {
   background: #0b1846cd;
+  justify-content: center;
 }
 .navbar .dropdown-menu a {
   border: none;
   color: antiquewhite;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
 .navbar .dropdown-menu a:hover {

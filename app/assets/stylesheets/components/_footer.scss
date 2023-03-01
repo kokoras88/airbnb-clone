@@ -7,6 +7,7 @@
   padding: 0px 50px;
   color: antiquewhite;
   background: linear-gradient(90deg, $green-vogue-900, black);
+  border-top: 2px solid $green-vogue-300;
 }
 .footer-links {
   display: flex;
@@ -90,7 +91,18 @@
   fill: white;
 }
 
-.my-svg1 {
+.my-svg1{
   background-image: url("https://avatars.githubusercontent.com/u/25823874?v=4");
+  background-size: cover;
+}
+
+.my-svg2{
+  background-image: url("https://avatars.githubusercontent.com/u/115866158?v=4");
+  background-size: cover;
+  z-index: 1;
+}
+
+.my-svg3{
+  background-image: url("https://avatars.githubusercontent.com/u/51957583?v=4");
   background-size: cover;
 }
