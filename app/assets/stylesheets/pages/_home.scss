@@ -140,7 +140,8 @@ body{
     width: 30%;
     height: 60%;
     border-radius: 20px;
-    margin: 0 10%;
+    margin-left: 10%;
+    margin-right: 5%;
   }
 
   .contentBx {
@@ -149,6 +150,7 @@ body{
   }
 
   h2 {
+    font-family: 'Archivo Black', sans-serif;
     font-size: 2em;
     color: $green-vogue-50;
     text-align: center;
