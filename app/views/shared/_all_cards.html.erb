@@ -18,7 +18,11 @@
             </div>
             <div class="card_details">
               <h1 class="title"><%= game.title %></h1>
-              <h2 class="subtitle"><%= game.description %></h2>
+              <% if game.description.length > 400 %>
+                <h2 class="subtitle"><%= game.description.first(400)%>......</h2>
+              <% else %>
+                <h2 class="subtitle"><%= game.description.first(400)%></h2>
+              <% end %>
             </div>
             <div class="card_footer">
               <p class="subtitle">Price: <%= game.price %></p>
