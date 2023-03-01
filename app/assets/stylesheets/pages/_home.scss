@@ -1,4 +1,9 @@
 // Specific CSS for your home-page
+
+.slogan{
+  padding: 0;
+}
+
 iframe {
   padding-top: 40px;
   display: block;
@@ -53,6 +58,7 @@ body{
   }
 
   .content {
+    backdrop-filter: blur(5px);
     position: relative;
     width: 50%;
     margin-left: 20px;
@@ -72,7 +78,7 @@ body{
     font-size: 1em;
     color: $green-vogue-50;
     margin-bottom: 20px;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
   }
 
   a {
