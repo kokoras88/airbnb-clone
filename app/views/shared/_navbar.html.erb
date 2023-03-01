@@ -10,10 +10,9 @@
           <li><%= link_to 'Categories', categories_path  %></li>
           <li><%= link_to 'Contact', contact_path %></li>
           <li><%= link_to 'About', about_path %></li>
-        </div>
         </ul>
+      </div>
     </div>
-    <%= current_user.photo %>
     <div style = 'display:flex; width: 25%; align-items: center; margin-right: 10px;'>
       <div class = 'search-form'>
         <%= form_with url: games_path, method: :get, class: "d-flex" do %>
@@ -26,17 +25,19 @@
         <% end %>
       </div>
       <% if user_signed_in? %>
-              <%= cl_image_tag @current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "My Reviews", reviews_path, class: "dropdown-item" %>
-                <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
-                <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
-              </div>
-          <% else %>
-            <!--li class="nav-item"-->
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-            <!--/li-->
-          <% end %>
+        <% if @current_user.photo.key? %>
+          <%= cl_image_tag @current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= image_tag "https://media.istockphoto.com/id/1332100919/vector/man-icon-black-icon-person-symbol.jpg?s=612x612&w=0&k=20&c=AVVJkvxQQCuBhawHrUhDRTCeNQ3Jgt0K1tXjJsFy1eg=", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <% end %>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <%= link_to "My Reviews", reviews_path, class: "dropdown-item" %>
+          <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
+          <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
+        </div>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <% end %>
     </div>
 </div>

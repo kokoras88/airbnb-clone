@@ -20,6 +20,10 @@
   padding: 20px;
   border-radius: 10px;
 
+  .fc-day-today{
+    background-color: #114ccc6c;
+  }
+
   a{
     text-decoration: none;
     color: antiquewhite;
@@ -114,7 +118,7 @@
     }
 
     &.fc-today {
-      //background-color: #e6eeffd1;
+      // background-color: #e6eeffd1;
     }
   }
 
