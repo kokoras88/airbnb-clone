@@ -39,3 +39,14 @@ flex-direction: row;
     width: 45%;
   }
 }
+
+.border-games {
+  .card_content{
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    padding: 20px;
+    box-shadow: rgb(121, 3, 255) 0 2px 5px 5px,
+  }
+}
