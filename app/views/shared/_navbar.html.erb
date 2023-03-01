@@ -13,7 +13,7 @@
         </div>
         </ul>
     </div>
-
+    <%= current_user.photo %>
     <div style = 'display:flex; width: 25%; align-items: center; margin-right: 10px;'>
       <div class = 'search-form'>
         <%= form_with url: games_path, method: :get, class: "d-flex" do %>
@@ -26,7 +26,7 @@
         <% end %>
       </div>
       <% if user_signed_in? %>
-              <%= image_tag "https://media.istockphoto.com/id/920322646/photo/stock-illustration-symbol-question-mark-3d-illustration-isolated-against-the-black-background.jpg?s=170667a&w=0&k=20&c=GWzBDJYooDe4v1-wVRoovl59K_Duwlji8sP_QfJiWOU=", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= cl_image_tag @current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "My Reviews", reviews_path, class: "dropdown-item" %>
                 <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
