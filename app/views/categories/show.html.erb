@@ -1,40 +1,41 @@
-<div class="main-title title-container">
+<div class = 'categories-page-container'>
+  <div class="main-title title-container">
     <h1 ><%= @category.name %></h1>
     <div class = 'saber'></div>
-</div>
-
-<div class="button-add-container">
-    <%= link_to 'Back to categories', categories_path,  class: 'new-game-btn' %>
-    <%= link_to '+ Add a new game listing', new_game_path, class: 'new-game-btn' %>
   </div>
-</div>
 
- <div class="row">
-    <div id="main-grid">
-      <% @games.each_with_index do |game, index| %>
-        <% class_name = ['left', 'center', 'right'][index % 3 ] %>
-        <div class="card-games" style="background: #050e2d;">
-          <div class="card_content">
-            <div class="card_image">
-              <img src="<%= cl_image_path game.photo.key %>" alt="<%= game.title %>" style="height: 500px; width: 100%;">
-            </div>
-            <div class="card_details">
-              <h1 class="title"><%= game.title %></h1>
-              <% if game.description.length > 400 %>
-                <h2 class="subtitle"><%= game.description.first(400)%>......</h2>
-              <% else %>
-                <h2 class="subtitle"><%= game.description.first(400)%></h2>
-              <% end %>
-            </div>
-            <div class="card_footer">
-              <p class="subtitle">Price: <%= game.price %></p>
-              <%= button_to game_path(game), class: 'play-button', method: :get do %>
-                PLAY
-              <% end %>
+  <div class="button-add-container">
+      <%= link_to 'Back to categories', categories_path,  class: 'new-game-btn' %>
+      <%= link_to '+ Add a new game listing', new_game_path, class: 'new-game-btn' %>
+  </div>
+
+  <div class="row">
+      <div id="main-grid">
+        <% @games.each_with_index do |game, index| %>
+          <% class_name = ['left', 'center', 'right'][index % 3 ] %>
+          <div class="card-games" style="background: #050e2d;">
+            <div class="card_content">
+              <div class="card_image">
+                <img src="<%= cl_image_path game.photo.key %>" alt="<%= game.title %>" style="height: 500px; width: 100%;">
+              </div>
+              <div class="card_details">
+                <h1 class="title"><%= game.title %></h1>
+                <% if game.description.length > 400 %>
+                  <h2 class="subtitle"><%= game.description.first(400)%>......</h2>
+                <% else %>
+                  <h2 class="subtitle"><%= game.description.first(400)%></h2>
+                <% end %>
+              </div>
+              <div class="card_footer">
+                <p class="subtitle">Price: <%= game.price %></p>
+                <%= button_to game_path(game), class: 'play-button', method: :get do %>
+                  PLAY
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

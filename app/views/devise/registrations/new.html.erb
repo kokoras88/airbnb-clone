@@ -1,5 +1,5 @@
 <div  style = "display: flex; align-items: center; justify-content: center; height: 100vh;">
-  <div style = 'width: 50%'>
+  <div style = 'width: 50%; background-color: rgba(255, 255, 255, 0.16); backdrop-filter: blur(5px); padding: 25px; border-radius: 15px;'>
     <h2>Sign up</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>

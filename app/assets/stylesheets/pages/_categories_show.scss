@@ -1,3 +1,7 @@
+.categories-page-container{
+  height: 100vh;
+}
+
 .title-container {
   text-align: center;
   position: sticky;
@@ -7,4 +11,10 @@
   width: 100%;
   z-index: 100;
   background: linear-gradient(90deg, $green-vogue-900, black);
+}
+
+.main-title{
+  h1{
+    font-family: 'Archivo Black', sans-serif;
+  }
 }
