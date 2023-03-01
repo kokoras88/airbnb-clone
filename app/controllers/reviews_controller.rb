@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: %i[show edit update destroy]
 
   def index
+    @bookings = policy_scope(Booking)
     @reviews = policy_scope(Review)
   end
 
