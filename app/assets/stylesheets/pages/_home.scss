@@ -1,4 +1,9 @@
 // Specific CSS for your home-page
+
+.slogan{
+  padding: 0;
+}
+
 iframe {
   padding-top: 40px;
   display: block;
@@ -53,6 +58,7 @@ body{
   }
 
   .content {
+    backdrop-filter: blur(5px);
     position: relative;
     width: 50%;
     margin-left: 20px;
@@ -60,19 +66,32 @@ body{
     background:  rgba(0, 0, 0, 0.356);
     border-radius: 20px;
     padding-bottom: 20px;
+
+    .loader {
+      width: 0;
+      max-width: 60%;
+      height: 4.8px;
+      display: inline-block;
+      position: relative;
+      background: $green-vogue-300;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      box-sizing: border-box;
+      animation: animFw 8s linear infinite;
+    }
   }
 
   h2 {
+    font-family: 'Archivo Black', sans-serif;
     font-size: 2em;
     color: $green-vogue-50;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
   }
 
   p {
     font-size: 1em;
     color: $green-vogue-50;
     margin-bottom: 20px;
-    padding-bottom: 10%;
+    padding-bottom: 5%;
   }
 
   a {
@@ -95,18 +114,34 @@ body{
 
 .about {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   border-bottom: 2px solid $green-vogue-300;
   position: relative;
   width: 100%;
   align-items: center;
   padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  .loader {
+    width: 0;
+    height: 4.8px;
+    display: inline-block;
+    position: relative;
+    background: $green-vogue-300;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    animation: animFw 8s linear infinite;
+  }
+
 
   img {
     width: 30%;
     height: 60%;
     border-radius: 20px;
-    margin: 0 10%;
+    margin-left: 10%;
+    margin-right: 5%;
   }
 
   .contentBx {
@@ -115,6 +150,7 @@ body{
   }
 
   h2 {
+    font-family: 'Archivo Black', sans-serif;
     font-size: 2em;
     color: $green-vogue-50;
     text-align: center;
@@ -178,16 +214,7 @@ body{
 // Overall, this code is adjusting the layout of the .about section and its child elements when the screen width is less than or equal to 768 pixels.
 // By setting the flex-direction of .about to column and the width of its child elements to 100%, the code creates a vertically stacked layout that is more appropriate for smaller screens.
 
-.loader {
-  width: 0;
-  height: 4.8px;
-  display: inline-block;
-  position: relative;
-  background: $green-vogue-300;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  box-sizing: border-box;
-  animation: animFw 8s linear infinite;
-}
+
 
 @keyframes animFw {
   0% {

@@ -1,49 +1,50 @@
 <div class='page-container'>
-
-  <div class="game-banner" style="
-        background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
-        url('<%= cl_image_path @game.photo.key, fetch_format: :auto, crop: :fill %>')"
-      >
-      <%= link_to 'Back to games', games_path, class: 'btn-back btn', 'data-controller': "sticky", 'data-action': "scroll@window->sticky#stick", 'data-sticky-target': "button" if request.path.match(/\/games\/\d/) %>
-      <div class='game-title'>
-        <h1><%= @game.title %></h1>
-      </div>
-  </div>
-  <div class='game-wrapper'>
-      <div class="game-container">
-        <div class = 'game-header'>
-          <h1>About this Game</h1>
+    <div class="game-banner" style="
+          background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0)),
+          url('<%= cl_image_path @game.photo.key, fetch_format: :auto, crop: :fill %>')"
+        >
+        <%= link_to 'Back to games', games_path, class: 'btn-back btn', 'data-controller': "sticky", 'data-action': "scroll@window->sticky#stick", 'data-sticky-target': "button" if request.path.match(/\/games\/\d/) %>
+        <div class='game-title'>
+          <h1><%= @game.title %></h1>
         </div>
-        <div class = 'saber'></div>
-        <div class="game-information">
-          <p><%= @game.description %></p>
-          <p><% @game.categories.each do |category| %>
-            <%= link_to category.name, category_path(category), class: 'btn btn-light' %>
-          <% end %>
-          <div class="game-links">
-            <%= link_to 'Edit', edit_game_path(@game), class: 'btn-edit btn btn-primary' if policy(@game).edit?%>
-            <%= link_to 'Delete', game_path(@game), class: 'btn-delete btn btn-danger',
-             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@game).edit? %>
+    </div>
+  <div class = 'center'>
+    <div class='game-wrapper'>
+        <div class="game-container">
+          <div class = 'game-header'>
+            <h1>About this Game</h1>
           </div>
-          </p>
-          Price per day: <%= @game.price %>
-        </div>
-      </div>
-      <div class="game-reviews">
-        <%= render 'shared/all_reviews' %>
-        <div class = 'review-button'>
-          <%= link_to "Write a Review", new_game_review_path(@game), class: 'btn btn-info' if @booked%>
-        </div>
-      </div>
-      <div class = 'booking-wrapper'>
-        <h1 class = 'bookings-header'>Book it now</h1>
-        <div class = 'saber'></div>
-        <div class="booking">
-          <%= render partial: 'bookings/form', locals: { bookings: @bookings, booking: @booking, current_user: @current_user } %>
-          <div class="calendar">
-            <%= render partial: 'bookings/calendar', locals: { bookings: @bookings, game: @game, current_user: @current_user} %>
+          <div class = 'saber'></div>
+          <div class="game-information">
+            <p><%= @game.description %></p>
+            <p><% @game.categories.each do |category| %>
+              <%= link_to category.name, category_path(category), class: 'btn btn-light' %>
+            <% end %>
+            <div class="game-links">
+              <%= link_to 'Edit', edit_game_path(@game), class: 'btn-edit btn btn-primary' if policy(@game).edit?%>
+              <%= link_to 'Delete', game_path(@game), class: 'btn-delete btn btn-danger',
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } if policy(@game).edit? %>
+            </div>
+            </p>
+            Price per day: <%= @game.price %>
           </div>
         </div>
-      </div>
+        <div class="game-reviews">
+          <%= render 'shared/all_reviews' %>
+          <div class = 'review-button'>
+            <%= link_to "Write a Review", new_game_review_path(@game), class: 'btn btn-info' if @booked%>
+          </div>
+        </div>
+        <div class = 'booking-wrapper'>
+          <h1 class = 'bookings-header'>Book it now</h1>
+          <div class = 'saber'></div>
+          <div class="booking">
+            <%= render partial: 'bookings/form', locals: { bookings: @bookings, booking: @booking, current_user: @current_user } %>
+            <div class="calendar">
+              <%= render partial: 'bookings/calendar', locals: { bookings: @bookings, game: @game, current_user: @current_user} %>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
 </div>
